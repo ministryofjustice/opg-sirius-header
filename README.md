@@ -8,7 +8,13 @@ Page loads at:
 `http://localhost:8889/supervision`
 
 Build with:
-`make build`
+`yarn build`
 
-To close:
+Down:
 `make down`
+
+Internal tests:
+`go test`
+
+Cypress:
+`yarn cypress`

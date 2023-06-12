@@ -2,6 +2,7 @@ version: "3.6"
 
 services:
   sirius-header:
+    image: sirius-header:latest
     build:
       context: ..
       dockerfile: ./docker/sirius-header/Dockerfile

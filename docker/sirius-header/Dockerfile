@@ -23,7 +23,6 @@ RUN go mod download
 COPY . .
 
 RUN go build -a -installsuffix cgo -o /go/bin/opg-sirius-header
-EXPOSE 8080
 
 FROM alpine:latest
 

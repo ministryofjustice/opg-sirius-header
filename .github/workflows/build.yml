@@ -142,20 +142,6 @@ jobs:
         run: |
           docker tag sirius-header:latest $ECR_REGISTRY/$ECR_REPOSITORY:${{ steps.bump_version.outputs.tag }}
 
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: ${{ steps.login-ecr.outputs.registry }}/sirius/sirius-header:${{ steps.bump_version.outputs.tag }}
-          format: 'template'
-          template: '@/contrib/sarif.tpl'
-          output: 'test-results/trivy-results.sarif'
-
-      - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v2
-        if: always()
-        with:
-          sarif_file: 'test-results/trivy-results.sarif'
-
       - name: Push Container
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}

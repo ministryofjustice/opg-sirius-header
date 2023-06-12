@@ -1,0 +1,23 @@
+version: "3.6"
+
+services:
+  sirius-header:
+    build:
+      context: ..
+      dockerfile: ./docker/sirius-header/Dockerfile
+    ports: ["8889:3456"]
+    environment:
+      PORT: 8889
+      PREFIX: /supervision
+      FEATURES:
+
+  cypress:
+    build:
+      context: ..
+      dockerfile: ./docker/cypress/Dockerfile
+    command: ["--headless", "-b", "chrome"]
+    volumes:
+      - ../cypress/screenshots:/root/cypress/screenshots:rw,delegated
+      - ../cypress/logs:/root/cypress/logs:rw,delegated
+    depends_on:
+      - sirius-header

@@ -1,0 +1,15 @@
+version: "3.6"
+
+services:
+  sirius-header:
+    platform: linux/amd64
+    build:
+      context: ..
+      dockerfile: ./docker/sirius-header/Dockerfile
+    ports:
+      - '8889:3456'
+    volumes:
+      - ..:/app:rw,delegated
+    environment:
+      PREFIX: /supervision
+      FEATURES:

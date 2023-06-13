@@ -14,12 +14,12 @@ type Template interface {
 }
 
 func renderTemplate(w http.ResponseWriter, name string, data interface{}) {
-	// This is inefficient - it reads the templates from the
+	// This is inefficient - it reads the template from the
 	// filesystem every time. This makes it much easier to
-	// develop though, so I can edit my templates and the
+	// develop though, so I can edit my template and the
 	// changes will be reflected without having to restart
 	// the app.
-	t, err := template.ParseGlob("template/*.html")
+	t, err := template.ParseGlob("web/template/*.gotmpl")
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Error %s", err.Error()), 500)
 		return
@@ -33,10 +33,12 @@ func renderTemplate(w http.ResponseWriter, name string, data interface{}) {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "index.html", struct {
-		Name string
+	renderTemplate(w, "page.gotmpl", struct {
+		prefix string
+		sirius string
 	}{
-		Name: "Sonic the Hedgehog",
+		prefix: "web/assets/static",
+		sirius: "localhost:8080/",
 	})
 }
 

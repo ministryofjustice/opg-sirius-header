@@ -8,7 +8,7 @@ Page loads at:
 `http://localhost:8889/supervision`
 
 Build with:
-`yarn build`
+`yarn build-app`
 
 Down:
 `make down`

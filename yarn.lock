@@ -39,7 +39,7 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@ministryofjustice/frontend@^1.6.2":
+"@ministryofjustice/frontend@^1.8.0":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@ministryofjustice/frontend/-/frontend-1.8.0.tgz#2d1372c689e6da95efe07a11d5ff99d83be2f445"
   integrity sha512-N4791HcFoqJNLNrK6EN4oMaTJjeFp9ileavCpXkda3qvpEWQByxZUsOd6sDA69FuLRpB6jBFL2C2bqfYbcTdqg==

@@ -15,7 +15,7 @@ FROM node:19.1.0-alpine3.16 as asset-env
 
 WORKDIR /app
 
-COPY static static
+COPY web/assets web/assets
 COPY package.json .
 COPY yarn.lock .
 
@@ -48,7 +48,7 @@ RUN apk --no-cache add tzdata
 ENV TZ="Europe/London"
 
 COPY --from=build-env /go/bin/opg-sirius-header opg-sirius-header
-COPY --from=build-env /app/static/template static/template
-COPY --from=asset-env /app/static static
+COPY --from=build-env /app/web/template web/template
+COPY --from=asset-env /app/web/static web/static
 
 ENTRYPOINT ["./opg-sirius-header"]

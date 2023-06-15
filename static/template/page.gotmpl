@@ -1,0 +1,51 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+                Sirius - Supervision
+        </title>
+        <link rel="stylesheet" href="{{.StaticBase}}/all.css" />
+        <link rel="stylesheet" href="{{.StaticBase}}/header.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="api-base-uri" />
+        <meta name="theme-color" content="blue" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    </head>
+
+    <body class="govuk-template__body sirius-header">
+        {{template "header.gotmpl" .}}
+        <div class="govuk-phase-banner">
+            <p class="govuk-phase-banner__content">
+                <span class="govuk-phase-banner__text govuk-!-padding-left-5">
+                    Your <a class="govuk-link" href="#">feedback</a> will help us to improve this service [not done yet].
+                </span>
+            </p>
+        </div>
+
+        <div id="nav-search">
+            <div class="moj-primary-navigation" id="secondary-nav-bar">
+                <div class="moj-primary-navigation__nav">
+                    <nav class="moj-primary-navigation" aria-label="Primary navigation">
+                        <ul class="moj-primary-navigation__list">
+                            <li class="moj-primary-navigation__item">
+                                  <a class="moj-primary-navigation__link" aria-current="page" href="{{ .ClientSearchHref }}">Create client</a>
+                            </li>
+                            <li class="moj-primary-navigation__item">
+                                <a class="moj-primary-navigation__link" href="{{ .WorkflowHref }}">Workflow</a>
+                            </li>
+                            <li class="moj-primary-navigation__item">
+                                <a class="moj-primary-navigation__link" href="{{ .FinanceHref }}">Finance</a>
+                            </li>
+                            <li class="moj-primary-navigation__item">
+                                <a class="moj-primary-navigation__link" href="http://localhost:8080">Guidance [not done yet]</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="moj-search-bar"></div>
+        </div>
+    </body>
+    </html>

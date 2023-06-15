@@ -5,7 +5,7 @@ describe("Sirius Header homepage", () => {
     cy.visit("/supervision/");
   });
 
-  it('finds the content "Hello world!"', () => {
-    cy.contains('Hello world!')
+  it('finds the content "Sirius"', () => {
+    cy.contains('Sirius')
   })
 });

@@ -58,19 +58,15 @@ func (a *App) Start() {
 func (a App) index(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "page.gotmpl", struct {
 		AdminHref       string
-		LpaHref         string
-		LogOutHref      string
+		PoaHref         string
+		SignOutHref     string
 		SupervisionHref string
-		WorkflowHref    string
-		TestString      string
 		StaticBase      string
 	}{
 		AdminHref:       "http://localhost:8080/admin",
-		LpaHref:         "http://localhost:8080/lpa",
-		LogOutHref:      "http://localhost:8080/auth/logout",
-		SupervisionHref: "http://localhost:8080/supervision/supervision",
-		WorkflowHref:    "http://localhost:8080/supervision/workflow",
-		TestString:      "Kate",
+		PoaHref:         "http://localhost:8080/lpa",
+		SignOutHref:     "http://localhost:8080/auth/logout",
+		SupervisionHref: "http://localhost:8080/supervision",
 		StaticBase:      a.StaticBase,
 	})
 }

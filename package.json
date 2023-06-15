@@ -17,7 +17,7 @@
     "build-app": "docker-compose -f docker/docker-compose.yml up --build",
     "down": "docker-compose -f docker/docker-compose.yml down",
     "build": "yarn build:css && yarn build:images",
-    "build:css": "sass --load-path . --style compressed web/assets/stylesheets/all.css",
-    "build:images": "mkdir -p static/assets/images && cp node_modules/govuk-frontend/govuk/assets/images/* node_modules/@ministryofjustice/frontend/moj/assets/images/* web/static/assets/images"
+    "build:css": "sass --load-path . --style compressed public/assets/stylesheets/all.css",
+    "build:images": "mkdir -p static/assets/images && cp node_modules/govuk-frontend/govuk/assets/images/* node_modules/@ministryofjustice/frontend/moj/assets/images/* public/static/assets/images"
   }
 }

@@ -14,7 +14,7 @@ func renderTemplate(w http.ResponseWriter, name string, data interface{}) {
 	// develop though, so I can edit my template and the
 	// changes will be reflected without having to restart
 	// the app.
-	t, err := template.ParseGlob("web/template/*.gotmpl")
+	t, err := template.ParseGlob("static/template/*.gotmpl")
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Error %s", err.Error()), 500)
 		return

@@ -11,6 +11,17 @@ RUN apk update \
     git \
     && update-ca-certificates
 
+FROM node:19.1.0-alpine3.16 as asset-env
+
+WORKDIR /app
+
+COPY web/assets web/assets
+COPY package.json .
+COPY yarn.lock .
+
+RUN yarn install
+RUN yarn build
+
 FROM base as build-env
 
 WORKDIR /app
@@ -38,4 +49,6 @@ ENV TZ="Europe/London"
 
 COPY --from=build-env /go/bin/opg-sirius-header opg-sirius-header
 COPY --from=build-env /app/web/template web/template
+COPY --from=asset-env /app/web/static web/static
+
 ENTRYPOINT ["./opg-sirius-header"]

@@ -8,3 +8,4 @@ services:
     ports: ["8889:3456"]
     environment:
       PREFIX: /supervision
+      SIRIUS_PUBLIC_URL: http://localhost:8080

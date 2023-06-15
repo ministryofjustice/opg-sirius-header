@@ -3,15 +3,10 @@ package main
 import (
 	"fmt"
 	"html/template"
-	"io"
 	"log"
 	"net/http"
 	"os"
 )
-
-type Template interface {
-	ExecuteTemplate(io.Writer, string, interface{}) error
-}
 
 func renderTemplate(w http.ResponseWriter, name string, data interface{}) {
 	// This is inefficient - it reads the template from the
@@ -32,16 +27,6 @@ func renderTemplate(w http.ResponseWriter, name string, data interface{}) {
 	}
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "page.gotmpl", struct {
-		prefix string
-		sirius string
-	}{
-		prefix: "web/assets/static",
-		sirius: "localhost:8080/",
-	})
-}
-
 func logreq(f func(w http.ResponseWriter, r *http.Request)) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		log.Printf("path: %s", r.URL.Path)
@@ -51,7 +36,8 @@ func logreq(f func(w http.ResponseWriter, r *http.Request)) http.Handler {
 }
 
 type App struct {
-	Port string
+	Port       string
+	StaticBase string
 }
 
 func (a *App) Start() {
@@ -59,22 +45,54 @@ func (a *App) Start() {
 	prefix := getEnv("PREFIX", "")
 	logger := log.New(os.Stdout, "opg-sirius-header ", log.LstdFlags)
 
-	http.Handle(prefix+"/", logreq(index))
+	if a.StaticBase == "/static" {
+		log.Printf("serving static assets")
+		http.Handle("/static/", logreq(staticHandler("static")))
+	}
+	http.Handle(prefix+"/", logreq(a.index))
 
 	logger.Println("Sirius header running at port " + port)
 	logger.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
-func main() {
-	server := App{
-		Port: getEnv("PORT", "3456"),
-	}
-	server.Start()
+func (a App) index(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "page.gotmpl", struct {
+		AdminHref       string
+		LpaHref         string
+		LogOutHref      string
+		SupervisionHref string
+		WorkflowHref    string
+		TestString      string
+		StaticBase      string
+	}{
+		AdminHref:       "http://localhost:8080/admin",
+		LpaHref:         "http://localhost:8080/lpa",
+		LogOutHref:      "http://localhost:8080/auth/logout",
+		SupervisionHref: "http://localhost:8080/supervision/supervision",
+		WorkflowHref:    "http://localhost:8080/supervision/workflow",
+		TestString:      "Kate",
+		StaticBase:      a.StaticBase,
+	})
 }
 
-func getEnv(key, def string) string {
-	if value := os.Getenv(key); value != "" {
-		return value
+func staticHandler(dir string) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		http.StripPrefix("/static/", http.FileServer(http.Dir(dir))).ServeHTTP(w, r)
 	}
-	return def
+}
+
+func getEnv(key, defaultValue string) string {
+	val, ok := os.LookupEnv(key)
+	if !ok {
+		return defaultValue
+	}
+	return val
+}
+
+func main() {
+	server := App{
+		Port:       getEnv("PORT", "3456"),
+		StaticBase: getEnv("STATIC_BASE", "/static"),
+	}
+	server.Start()
 }

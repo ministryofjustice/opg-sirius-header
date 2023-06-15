@@ -27,6 +27,7 @@
                 <a class="moj-header__link moj-header__link--service-name">
                     Sirius
                 </a>
+                <h1> {{ .TestString }}</h1>
             </div>
             <div class="moj-header__content">
                 <nav
@@ -36,7 +37,7 @@
                         <li class="moj-header__navigation-item">
                             <a
                                     class="moj-header__navigation-link"
-                                    href="{{ .sirius "/supervision/workflow" }}"
+                                    href={{ .WorkflowHref }}
                                     aria-current="page">
                                 Workflow
                             </a>
@@ -44,7 +45,7 @@
                         <li class="moj-header__navigation-item">
                             <a
                                     class="moj-header__navigation-link"
-                                    href="{{ .sirius "/supervision" }}"
+                                    href="{{ .SupervisionHref }}"
                                     aria-current="page">
                                 Supervision
                             </a>
@@ -53,7 +54,7 @@
                         <li class="moj-header__navigation-item">
                             <a
                                     class="moj-header__navigation-link"
-                                    href="{{ .sirius "/lpa" }}">
+                                    href="{{ .LpaHref }}">
                                 LPA
                             </a>
                         </li>
@@ -61,7 +62,7 @@
                         <li class="moj-header__navigation-item">
                             <a
                                     class="moj-header__navigation-link"
-                                    href="{{ .sirius "/admin" }}">
+                                    href="{{ .AdminHref }}">
                                 Admin
                             </a>
                         </li>
@@ -69,7 +70,7 @@
                         <li class="moj-header__navigation-item">
                             <a
                                     class="moj-header__navigation-link"
-                                    href="{{ .sirius "/auth/logout" }}">
+                                    href="{{ .LogOutHref }}">
                                 Logout
                             </a>
                         </li>
@@ -77,5 +78,7 @@
                 </nav>
             </div>
         </div>
+        <link rel="stylesheet" href="{{.StaticBase}}/style.css" />
+
     </header>
     <h1> Header is here</h1>

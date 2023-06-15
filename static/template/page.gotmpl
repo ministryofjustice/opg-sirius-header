@@ -19,33 +19,33 @@
         <div class="govuk-phase-banner">
             <p class="govuk-phase-banner__content">
                 <span class="govuk-phase-banner__text govuk-!-padding-left-5">
-                    Your <a class="govuk-link" href="#">feedback</a> will help us to improve this service.
+                    Your <a class="govuk-link" href="#">feedback</a> will help us to improve this service [not done yet].
                 </span>
             </p>
         </div>
 
         <div id="nav-search">
-            <div class="moj-primary-navigation" style="float: left;">
+            <div class="moj-primary-navigation" id="secondary-nav-bar">
                 <div class="moj-primary-navigation__nav">
                     <nav class="moj-primary-navigation" aria-label="Primary navigation">
                         <ul class="moj-primary-navigation__list">
                             <li class="moj-primary-navigation__item">
-                                <a class="moj-primary-navigation__link" aria-current="page" href="http://localhost:8080/supervision/#/clients/search-for-client">Create client</a>
+                                  <a class="moj-primary-navigation__link" aria-current="page" href="{{ .ClientSearchHref }}">Create client</a>
                             </li>
                             <li class="moj-primary-navigation__item">
-                                <a class="moj-primary-navigation__link" href="http://localhost:8080/supervision/workflow/">Workflow</a>
+                                <a class="moj-primary-navigation__link" href="{{ .WorkflowHref }}">Workflow</a>
                             </li>
                             <li class="moj-primary-navigation__item">
-                                <a class="moj-primary-navigation__link" href="http://localhost:8080/supervision/#/finance-hub/reporting">Finance</a>
+                                <a class="moj-primary-navigation__link" href="{{ .FinanceHref }}">Finance</a>
                             </li>
                             <li class="moj-primary-navigation__item">
-                                <a class="moj-primary-navigation__link" href="http://localhost:8080">Guidance</a>
+                                <a class="moj-primary-navigation__link" href="http://localhost:8080">Guidance [not done yet]</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div class="moj-search-bar" style="float: right;" width="50%"></div>
+            <div class="moj-search-bar"></div>
         </div>
     </body>
     </html>

@@ -38,6 +38,7 @@ func logreq(f func(w http.ResponseWriter, r *http.Request)) http.Handler {
 type App struct {
 	Port       string
 	StaticBase string
+	SiriusUrl  string
 }
 
 func (a *App) Start() {
@@ -57,17 +58,25 @@ func (a *App) Start() {
 
 func (a App) index(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "page.gotmpl", struct {
-		AdminHref       string
-		PoaHref         string
-		SignOutHref     string
-		SupervisionHref string
-		StaticBase      string
+		AdminHref        string
+		ClientSearchHref string
+		FinanceHref      string
+		PoaHref          string
+		SignOutHref      string
+		SupervisionHref  string
+		StaticBase       string
+		WorkflowHref     string
+		Url              string
 	}{
-		AdminHref:       "http://localhost:8080/admin",
-		PoaHref:         "http://localhost:8080/lpa",
-		SignOutHref:     "http://localhost:8080/auth/logout",
-		SupervisionHref: "http://localhost:8080/supervision",
-		StaticBase:      a.StaticBase,
+		AdminHref:        a.SiriusUrl + "/admin",
+		ClientSearchHref: a.SiriusUrl + "/supervision/#/clients/search-for-client",
+		FinanceHref:      a.SiriusUrl + "/supervision/#/finance-hub/reporting",
+		PoaHref:          a.SiriusUrl + "/lpa",
+		SignOutHref:      a.SiriusUrl + "/auth/logout",
+		SupervisionHref:  a.SiriusUrl + "/supervision",
+		WorkflowHref:     a.SiriusUrl + "/supervision/workflow",
+		StaticBase:       a.StaticBase,
+		Url:              a.SiriusUrl,
 	})
 }
 
@@ -89,6 +98,7 @@ func main() {
 	server := App{
 		Port:       getEnv("PORT", "3456"),
 		StaticBase: getEnv("STATIC_BASE", "/static"),
+		SiriusUrl:  getEnv("SIRIUS_URL", "http://localhost:8080"),
 	}
 	server.Start()
 }

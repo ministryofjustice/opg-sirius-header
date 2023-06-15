@@ -29,3 +29,11 @@
 	width: 100%;
 	background-color: #194977 !important;
 }
+
+#secondary-nav-bar {
+	float: left;
+}
+
+.moj-search-bar {
+	float: right;
+}

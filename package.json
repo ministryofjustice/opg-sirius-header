@@ -18,6 +18,6 @@
     "down": "docker-compose -f docker/docker-compose.yml down",
     "build": "yarn build:css && yarn build:images",
     "build:css": "sass --load-path . --style compressed static/all.css static/header.css",
-    "build:images": "mkdir -p static/assets/images && cp node_modules/govuk-frontend/govuk/assets/images/* node_modules/@ministryofjustice/frontend/moj/assets/images/* static/assets/images"
+    "build:images": "mkdir -p web/static/assets/images && cp node_modules/govuk-frontend/govuk/assets/images/* node_modules/@ministryofjustice/frontend/moj/assets/images/* web/static/assets/images"
   }
 }

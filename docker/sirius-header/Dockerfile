@@ -48,7 +48,7 @@ RUN apk --no-cache add tzdata
 ENV TZ="Europe/London"
 
 COPY --from=build-env /go/bin/opg-sirius-header opg-sirius-header
-COPY --from=build-env /app/static/template static/template
+COPY --from=build-env /app/web/template web/template
 COPY --from=asset-env /app/static static
 
 ENTRYPOINT ["./opg-sirius-header"]

@@ -1,17 +1,10 @@
-import {LitElement} from 'lit';
-
-export class MyElement extends LitElement {
-    static properties = {
-        version: {},
-    };
-
+export class MyElement {
     constructor() {
-        super();
-        this.version = 'STARTING';
+        this.attachShadow({ mode: "open" });
     }
 
     render() {
-        return `
+        const html = `
             <header class="moj-header" role="banner">
                 <div class="moj-header__container">
                     <div class="moj-header__logo" style="width: 33.33%;">
@@ -87,6 +80,10 @@ export class MyElement extends LitElement {
                 </div>
             </header>
     `;
+
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        this.shadowRoot.append(div);
     }
 }
 customElements.define('my-element', MyElement);

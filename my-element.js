@@ -1,4 +1,4 @@
-import {LitElement, html} from 'lit';
+import {LitElement} from 'lit';
 
 export class MyElement extends LitElement {
     static properties = {
@@ -11,7 +11,7 @@ export class MyElement extends LitElement {
     }
 
     render() {
-        return html`
+        return `
             <header class="moj-header" role="banner">
                 <div class="moj-header__container">
                     <div class="moj-header__logo" style="width: 33.33%;">

@@ -1,10 +1,5 @@
 # OS
 .DS_STORE
-#  terraform
-**/.terraform/*
-*.tfstate
-*.tfstate.*
-*.tfvars
 secrets.auto.tfvars
 # editors
 .vscode/
@@ -14,7 +9,6 @@ secrets.auto.tfvars
 .env
 venv/
 env/
-/main
 node_modules
 package-lock.json
 cypress/screenshots

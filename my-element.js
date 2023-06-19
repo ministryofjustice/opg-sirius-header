@@ -3,7 +3,7 @@ export class MyElement extends HTMLElement {
         this.innerHTML = `
             <header class="moj-header" role="banner">
                 <div class="moj-header__container">
-                    <div class="moj-header__logo" style="width: 33.33%;">
+                    <div class="moj-header__logo govuk-grid-column-one-third">
                         <svg
                                 role="presentation"
                                 focusable="false"
@@ -29,7 +29,7 @@ export class MyElement extends HTMLElement {
                         </a>
                     </div>
 
-                    <div class="moj-header__content" style="width: 66.66%;">
+                    <div class="moj-header__content govuk-grid-column-two-thirds">
 
                         <a href="/" class="moj-header__link moj-header__link--service-name">
                             Sirius - Supervision
@@ -38,7 +38,6 @@ export class MyElement extends HTMLElement {
                         <nav
                                 class="moj-header__navigation"
                                 aria-label="Account navigation"
-                                style="float: right;"
                         >
                             <ul class="moj-header__navigation-list">
                                 <li class="moj-header__navigation-item">

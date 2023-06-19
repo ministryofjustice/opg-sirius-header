@@ -1,10 +1,6 @@
-export class MyElement {
-    constructor() {
-        this.attachShadow({ mode: "open" });
-    }
-
-    render() {
-        const html = `
+export class MyElement extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
             <header class="moj-header" role="banner">
                 <div class="moj-header__container">
                     <div class="moj-header__logo" style="width: 33.33%;">
@@ -80,10 +76,6 @@ export class MyElement {
                 </div>
             </header>
     `;
-
-        const div = document.createElement('div');
-        div.innerHTML = html;
-        this.shadowRoot.append(div);
     }
 }
 customElements.define('my-element', MyElement);

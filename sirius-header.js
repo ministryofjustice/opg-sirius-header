@@ -20,7 +20,7 @@ export class SiriusHeader extends HTMLElement {
             <body class="govuk-template__body sirius-header">
                 <header class="moj-header" role="banner">
                     <div class="moj-header__container">
-                        <div class="moj-header__logo govuk-grid-column-one-third">
+                        <div class="moj-header__logo govuk-grid-column-one-third govuk-!-padding-left-0">
                             <svg
                                     role="presentation"
                                     focusable="false"
@@ -79,14 +79,14 @@ export class SiriusHeader extends HTMLElement {
                 </header>
                 <div class="govuk-phase-banner">
                     <p class="govuk-phase-banner__content">
-                        <span class="govuk-phase-banner__text govuk-!-padding-left-5">
+                        <span class="govuk-phase-banner__text govuk-!-padding-left-3">
                             Your <a class="govuk-link" href="#">feedback</a> will help us to improve this service [not done yet].
                         </span>
                     </p>
                 </div>
         
                 <div id="nav-search">
-                    <div class="moj-primary-navigation" id="secondary-nav-bar">
+                    <div class="moj-primary-navigation moj-header__content" id="secondary-nav-bar">
                         <div class="moj-primary-navigation__nav">
                             <nav class="moj-primary-navigation" aria-label="Primary navigation">
                                 <ul class="moj-primary-navigation__list">

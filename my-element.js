@@ -1,5 +1,10 @@
 export class MyElement extends HTMLElement {
     connectedCallback() {
+        let prefix = ''
+        if (window.location.hostname === 'localhost') {
+            prefix = 'http://localhost:8080'
+        }
+
         this.innerHTML = `
             <header class="moj-header" role="banner">
                 <div class="moj-header__container">
@@ -31,7 +36,7 @@ export class MyElement extends HTMLElement {
 
                     <div class="moj-header__content govuk-grid-column-two-thirds">
 
-                        <a href="/" class="moj-header__link moj-header__link--service-name">
+                        <a href="${prefix}/supervision" class="moj-header__link moj-header__link--service-name">
                             Sirius - Supervision
                         </a>
 
@@ -43,14 +48,14 @@ export class MyElement extends HTMLElement {
                                 <li class="moj-header__navigation-item">
                                     <a
                                             class="moj-header__navigation-link"
-                                            href="">
+                                            href="${prefix}/lpa">
                                         Power of Attorney
                                     </a>
                                 </li>
                                 <li class="moj-header__navigation-item">
                                     <a
                                             class="moj-header__navigation-link"
-                                            href=""
+                                            href="${prefix}/supervision"
                                             aria-current="page">
                                         Supervision
                                     </a>
@@ -58,14 +63,14 @@ export class MyElement extends HTMLElement {
                                 <li class="moj-header__navigation-item">
                                     <a
                                             class="moj-header__navigation-link"
-                                            href="">
+                                            href="${prefix}/admin">
                                         Admin
                                     </a>
                                 </li>
                                 <li class="moj-header__navigation-item">
                                     <a
                                             class="moj-header__navigation-link"
-                                            href="">
+                                            href="${prefix}/signout">
                                         Sign out
                                     </a>
                                 </li>

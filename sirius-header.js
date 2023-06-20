@@ -68,7 +68,7 @@ export class SiriusHeader extends HTMLElement {
                                         </a>
                                     </li>
                                     <li class="moj-header__navigation-item">
-                                        <a class="moj-header__navigation-link" href="${prefix}/signout">
+                                        <a class="moj-header__navigation-link" href="${prefix}/auth/logout">
                                             Sign out
                                         </a>
                                     </li>
@@ -80,7 +80,7 @@ export class SiriusHeader extends HTMLElement {
                 <div class="govuk-phase-banner">
                     <p class="govuk-phase-banner__content">
                         <span class="govuk-phase-banner__text govuk-!-padding-left-3">
-                            Your <a class="govuk-link" href="#">feedback</a> will help us to improve this service [not done yet].
+                            Your <a class="govuk-link" href=""></a> 
                         </span>
                     </p>
                 </div>
@@ -98,9 +98,6 @@ export class SiriusHeader extends HTMLElement {
                                     </li>
                                     <li class="moj-primary-navigation__item">
                                         <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/finance-hub/reporting">Finance</a>
-                                    </li>
-                                    <li class="moj-primary-navigation__item">
-                                        <a class="moj-primary-navigation__link" href="http://localhost:8080">Guidance [not done yet]</a>
                                     </li>
                                 </ul>
                             </nav>

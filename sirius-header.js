@@ -52,7 +52,7 @@ export class SiriusHeader extends HTMLElement {
                                 Sirius - Supervision
                             </a>
     
-                            <nav class="moj-header__navigation" aria-label="Account navigation">
+                            <nav class="moj-header__navigation moj-header__content" aria-label="Account navigation">
                                 <ul class="moj-header__navigation-list">
                                     <li class="moj-header__navigation-item">
                                         <a class="moj-header__navigation-link" href="${prefix}/lpa"> Power of Attorney</a>

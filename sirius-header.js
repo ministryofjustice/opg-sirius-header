@@ -80,7 +80,7 @@ export class SiriusHeader extends HTMLElement {
                 <div class="govuk-phase-banner">
                     <p class="govuk-phase-banner__content">
                         <span class="govuk-phase-banner__text govuk-!-padding-left-3">
-                            Your <a class="govuk-link" href=""></a> 
+                            <a class="govuk-link" href=""></a> 
                         </span>
                     </p>
                 </div>

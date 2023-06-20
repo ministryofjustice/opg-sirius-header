@@ -86,7 +86,7 @@ export class SiriusHeader extends HTMLElement {
                 </div>
         
                 <div id="nav-search">
-                    <div class="moj-primary-navigation" id="secondary-nav-bar">
+                    <div class="moj-primary-navigation govuk-!-padding-left-3" id="secondary-nav-bar">
                         <div class="moj-primary-navigation__nav">
                             <nav class="moj-primary-navigation" aria-label="Primary navigation">
                                 <ul class="moj-primary-navigation__list">

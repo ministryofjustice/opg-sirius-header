@@ -10,13 +10,35 @@ export class SiriusHeader extends HTMLElement {
         console.log(window.location.pathname);
         let lpaUrl = "none";
         let supervisionUrl = "none";
+        let adminUrl = "none";
+        let signOutUrl = "none";
+        let createClientUrl = "none";
+        let workflowUrl = "none";
+        let financeUrl = "none";
+
 
         if (window.location.href.indexOf("/lpa") > -1) {
-            lpaUrl = "page";
+            lpaUrl = `aria-current="page"`;
         }
         if (window.location.href.indexOf("/supervision") > -1) {
-            supervisionUrl = "page";
+            supervisionUrl = `aria-current="page"`;
         }
+        if (window.location.href.indexOf("/admin") > -1) {
+            adminUrl = "page";
+        }
+        if (window.location.href.indexOf("/auth/logout") > -1) {
+            signOutUrl = "page";
+        }
+        if (window.location.href.indexOf("/supervision/#/clients/search-for-client") > -1) {
+            createClientUrl = `aria-current="page"`;
+        }
+        if (window.location.href.indexOf("/supervision/workflow") > -1) {
+            workflowUrl = `aria-current="page"`;
+        }
+        if (window.location.href.indexOf("/supervision/#/finance-hub/reporting") > -1) {
+            financeUrl = `aria-current="page"`;
+        }
+
 
         this.innerHTML = `
              <head>
@@ -71,17 +93,17 @@ export class SiriusHeader extends HTMLElement {
                                         <a class="moj-header__navigation-link" aria-current="${lpaUrl}" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
                                     <li class="moj-header__navigation-item">
-                                        <a class="moj-header__navigation-link" href="${prefix}/supervision" aria-current="${supervisionUrl}">
+                                        <a class="moj-header__navigation-link" href="${prefix}/supervision" ${supervisionUrl}>
                                             Supervision
                                         </a>
                                     </li>
                                     <li class="moj-header__navigation-item">
-                                        <a class="moj-header__navigation-link" href="${prefix}/admin">
+                                        <a class="moj-header__navigation-link" href="${prefix}/admin" ${adminUrl}>
                                             Admin
                                         </a>
                                     </li>
                                     <li class="moj-header__navigation-item">
-                                        <a class="moj-header__navigation-link" href="${prefix}/auth/logout">
+                                        <a class="moj-header__navigation-link" href="${prefix}/auth/logout"  aria-current="${signOutUrl}">
                                             Sign out
                                         </a>
                                     </li>
@@ -103,13 +125,13 @@ export class SiriusHeader extends HTMLElement {
                             <nav class="moj-primary-navigation" aria-label="Primary navigation">
                                 <ul class="moj-primary-navigation__list">
                                     <li class="moj-primary-navigation__item">
-                                          <a class="moj-primary-navigation__link" aria-current="page" href="${prefix}/supervision/#/clients/search-for-client">Create client</a>
+                                          <a class="moj-primary-navigation__link" ${createClientUrl} href="${prefix}/supervision/#/clients/search-for-client">Create client</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
-                                        <a class="moj-primary-navigation__link" href="${prefix}/supervision/workflow">Workflow</a>
+                                        <a class="moj-primary-navigation__link" ${workflowUrl} href="${prefix}/supervision/workflow">Workflow</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
-                                        <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/finance-hub/reporting">Finance</a>
+                                        <a class="moj-primary-navigation__link" ${financeUrl} href="${prefix}/supervision/#/finance-hub/reporting">Finance</a>
                                     </li>
                                 </ul>
                             </nav>

@@ -21,6 +21,7 @@ export class SiriusHeader extends HTMLElement {
                 <meta name="api-base-uri" />
                 <meta name="theme-color" content="blue" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <link rel="stylesheet" href="css/all.css">
         
                 <header class="moj-header" role="banner">
                     <div class="moj-header__container">

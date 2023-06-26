@@ -21,9 +21,7 @@ export class SiriusHeader extends HTMLElement {
                 <meta name="api-base-uri" />
                 <meta name="theme-color" content="blue" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            </head>
         
-            <body class="govuk-template__body sirius-header">
                 <header class="moj-header" role="banner">
                     <div class="moj-header__container">
                         <div class="moj-header__logo govuk-grid-column-one-third govuk-!-padding-left-0">
@@ -110,7 +108,7 @@ export class SiriusHeader extends HTMLElement {
                     </div>
                     <div class="moj-search-bar"></div>
                 </div>
-            </body>
+            </head>
             </html>
     `;
     }

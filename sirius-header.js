@@ -5,6 +5,19 @@ export class SiriusHeader extends HTMLElement {
             prefix = 'http://localhost:8080'
         }
 
+        let currentUrl = window.location.pathname
+        console.log("path");
+        console.log(window.location.pathname);
+        let lpaUrl = "none";
+        let supervisionUrl = "none";
+
+        if (window.location.href.indexOf("/lpa") > -1) {
+            lpaUrl = "page";
+        }
+        if (window.location.href.indexOf("/supervision") > -1) {
+            supervisionUrl = "page";
+        }
+
         this.innerHTML = `
              <head>
                 <meta charset="utf-8" />
@@ -49,16 +62,16 @@ export class SiriusHeader extends HTMLElement {
                         <div class="moj-header__content govuk-grid-column-two-thirds">
     
                             <a href="${prefix}/supervision" class="moj-header__link moj-header__link--service-name">
-                                Sirius - Supervision
+                                Sirius
                             </a>
     
                             <nav class="moj-header__navigation moj-header__content" aria-label="Account navigation">
                                 <ul class="moj-header__navigation-list">
                                     <li class="moj-header__navigation-item">
-                                        <a class="moj-header__navigation-link" href="${prefix}/lpa"> Power of Attorney</a>
+                                        <a class="moj-header__navigation-link" aria-current="${lpaUrl}" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
                                     <li class="moj-header__navigation-item">
-                                        <a class="moj-header__navigation-link" href="${prefix}/supervision" aria-current="page">
+                                        <a class="moj-header__navigation-link" href="${prefix}/supervision" aria-current="${supervisionUrl}">
                                             Supervision
                                         </a>
                                     </li>

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "http-server",
-    "compile-sass": "node-sass sass/main.scss css/all.css"
-
+    "build": "yarn compile-sass && http-server",
+    "compile-sass": "node-sass sass/main.scss css/all.css",
+    "cypress": "npx cypress open"
   },
   "devDependencies": {
     "@ministryofjustice/frontend": "^1.0.0",

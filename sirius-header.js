@@ -53,7 +53,7 @@ export class SiriusHeader extends HTMLElement {
     
                         <div class="moj-header__content govuk-grid-column-two-thirds">
     
-                            <a href="#" class="moj-header__link moj-header__link--service-name">
+                            <a class="moj-header__link moj-header__link--service-name">
                                 Sirius
                             </a>
     

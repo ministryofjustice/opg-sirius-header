@@ -8240,3 +8240,7 @@ span.moj-header__link:hover {
   @media (min-width: 1020px) {
     .moj-width-container {
       margin: 0 auto; } }
+
+.selected-heading-link {
+  color: #1d70b8;
+  font-weight: bold; }

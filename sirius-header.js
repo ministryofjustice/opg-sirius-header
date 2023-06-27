@@ -7,14 +7,14 @@ export class SiriusHeader extends HTMLElement {
 
         let workflowUrl = '';
         let supervisionUrl = '';
-        let supervisionColourChange = '';
+        let selectedLinkColourChange = '';
 
         if (window.location.href.indexOf("/supervision/workflow") > -1) {
             workflowUrl = `aria-current="page"`;
         }
         if (window.location.href.indexOf("/supervision") > -1) {
             supervisionUrl = `aria-current="page"`;
-            supervisionColourChange = `$govuk-link-colour`;
+            selectedLinkColourChange = 'selected-heading-link';
         }
 
         this.innerHTML = `
@@ -68,8 +68,8 @@ export class SiriusHeader extends HTMLElement {
                                     <li class="moj-header__navigation-item">
                                         <a class="moj-header__navigation-link" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
-                                    <li class="moj-header__navigation-item">
-                                        <a class="moj-header__navigation-link ${supervisionColourChange}" ${supervisionUrl} href="${prefix}/supervision">
+                                    <li class="moj-header__navigation-item selected-heading-link">
+                                        <a class="moj-header__navigation-link " ${supervisionUrl} href="${prefix}/supervision">
                                             Supervision
                                         </a>
                                     </li>
@@ -101,10 +101,10 @@ export class SiriusHeader extends HTMLElement {
                             <nav class="moj-primary-navigation" aria-label="Primary navigation">
                                 <ul class="moj-primary-navigation__list">
                                     <li class="moj-primary-navigation__item">
-                                          <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/clients/search-for-client">Create client</a>
+                                       <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/clients/search-for-client">Create client</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
-                                        <a class="moj-primary-navigation__link" ${workflowUrl} href="${prefix}/supervision/workflow">Workflow</a>
+                                        <a class="moj-primary-navigation__link ${selectedLinkColourChange}" ${workflowUrl} href="${prefix}/supervision/workflow">Workflow</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
                                         <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/finance-hub/reporting">Finance</a>

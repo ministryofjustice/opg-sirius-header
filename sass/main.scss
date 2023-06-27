@@ -1,7 +1,9 @@
 @import "node_modules/govuk-frontend/govuk/all";
 @import "node_modules/@ministryofjustice/frontend/moj/all";
 
-.selected-heading-link {
-  color: govuk-colour("blue");
-  font-weight: bold;
+.moj-header__navigation-link {
+  &[aria-current="page"] {
+    color: govuk-colour("blue") !important;
+    font-weight: bold;
+  }
 }

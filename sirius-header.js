@@ -104,7 +104,7 @@ export class SiriusHeader extends HTMLElement {
                                        <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/clients/search-for-client">Create client</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
-                                        <a class="moj-primary-navigation__link ${selectedLinkColourChange}" ${workflowUrl} href="${prefix}/supervision/workflow">Workflow</a>
+                                        <a class="moj-primary-navigation__link selected-heading-link" ${workflowUrl} href="${prefix}/supervision/workflow">Workflow</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
                                         <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/finance-hub/reporting">Finance</a>

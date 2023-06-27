@@ -7,12 +7,14 @@ export class SiriusHeader extends HTMLElement {
 
         let workflowUrl = '';
         let supervisionUrl = '';
+        let supervisionColourChange = '';
 
         if (window.location.href.indexOf("/supervision/workflow") > -1) {
             workflowUrl = `aria-current="page"`;
         }
         if (window.location.href.indexOf("/supervision") > -1) {
             supervisionUrl = `aria-current="page"`;
+            supervisionColourChange = `$govuk-link-colour`;
         }
 
         this.innerHTML = `
@@ -67,7 +69,7 @@ export class SiriusHeader extends HTMLElement {
                                         <a class="moj-header__navigation-link" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
                                     <li class="moj-header__navigation-item">
-                                        <a class="moj-header__navigation-link" ${supervisionUrl} href="${prefix}/supervision">
+                                        <a class="moj-header__navigation-link ${supervisionColourChange}" ${supervisionUrl} href="${prefix}/supervision">
                                             Supervision
                                         </a>
                                     </li>

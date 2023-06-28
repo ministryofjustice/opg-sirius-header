@@ -12,8 +12,8 @@
     "@ministryofjustice/frontend": "^1.0.0",
     "cypress": "^12.15.0",
     "govuk-frontend": "^4.3.1",
-    "node-sass": "^9.0.0",
-    "http-server": "v14.1.1"
+    "http-server": "v14.1.1",
+    "sass": "^1.63.6"
   },
   "dependencies": {
     "scss": "^0.2.4"

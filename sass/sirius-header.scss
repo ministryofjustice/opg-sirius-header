@@ -1,9 +1,14 @@
 .sirius-header {
-      .moj-header__navigation-link {
-          & [aria-current="page"] {
-          color: govuk-colour("blue") !important;
-          font-weight: bold;
-          text-decoration: none !important;
-      }
+  .moj-header__navigation-link {
+    & [aria-current="page"] {
+      color: govuk-colour("blue") !important;
+      font-weight: bold;
+      text-decoration: none !important;
+    }
+  }
+
+  .moj-header__container {
+    max-width: none !important;
+    padding: 0 govuk-spacing(3);
   }
 }

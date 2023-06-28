@@ -5,19 +5,18 @@ export class SiriusHeader extends HTMLElement {
             prefix = 'http://localhost:8080'
         }
 
-        this.innerHTML = `
-             <head>
-                <meta charset="utf-8" />
-                <title>
-                        Sirius - Supervision
-                </title>
-                <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-                <meta name="api-base-uri" />
-                <meta name="theme-color" content="blue" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            </head>
-        
-            <body class="govuk-template__body sirius-header">
+        let workflowUrl = '';
+        let supervisionUrl = '';
+
+        if (window.location.href.indexOf("/supervision/workflow") > -1) {
+            workflowUrl = `aria-current="page"`;
+        }
+        if (window.location.href.indexOf("/supervision") > -1) {
+            supervisionUrl = `aria-current="page"`;
+        }
+
+        this.innerHTML = `  
+            <div class="sirius-header">         
                 <header class="moj-header" role="banner">
                     <div class="moj-header__container">
                         <div class="moj-header__logo govuk-grid-column-one-third govuk-!-padding-left-0">
@@ -48,8 +47,8 @@ export class SiriusHeader extends HTMLElement {
     
                         <div class="moj-header__content govuk-grid-column-two-thirds">
     
-                            <a href="${prefix}/supervision" class="moj-header__link moj-header__link--service-name">
-                                Sirius - Supervision
+                            <a class="moj-header__link moj-header__link--service-name">
+                                Sirius
                             </a>
     
                             <nav class="moj-header__navigation moj-header__content" aria-label="Account navigation">
@@ -57,8 +56,8 @@ export class SiriusHeader extends HTMLElement {
                                     <li class="moj-header__navigation-item">
                                         <a class="moj-header__navigation-link" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
-                                    <li class="moj-header__navigation-item">
-                                        <a class="moj-header__navigation-link" href="${prefix}/supervision" aria-current="page">
+                                    <li class="moj-header__navigation-item selected-heading-link">
+                                        <a class="moj-header__navigation-link " ${supervisionUrl} href="${prefix}/supervision">
                                             Supervision
                                         </a>
                                     </li>
@@ -90,10 +89,10 @@ export class SiriusHeader extends HTMLElement {
                             <nav class="moj-primary-navigation" aria-label="Primary navigation">
                                 <ul class="moj-primary-navigation__list">
                                     <li class="moj-primary-navigation__item">
-                                          <a class="moj-primary-navigation__link" aria-current="page" href="${prefix}/supervision/#/clients/search-for-client">Create client</a>
+                                       <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/clients/search-for-client">Create client</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
-                                        <a class="moj-primary-navigation__link" href="${prefix}/supervision/workflow">Workflow</a>
+                                        <a class="moj-primary-navigation__link" ${workflowUrl} href="${prefix}/supervision/workflow">Workflow</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
                                         <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/finance-hub/reporting">Finance</a>
@@ -104,8 +103,7 @@ export class SiriusHeader extends HTMLElement {
                     </div>
                     <div class="moj-search-bar"></div>
                 </div>
-            </body>
-            </html>
+            </div> 
     `;
     }
 }

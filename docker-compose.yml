@@ -1,0 +1,14 @@
+version: "3.6"
+
+services:
+  opg-sirius-header:
+    build:
+      context: .
+      dockerfile: docker/opg-sirius-header/Dockerfile
+
+  cypress:
+    build:
+      context: .
+      dockerfile: docker/cypress/Dockerfile
+    depends_on:
+      - opg-sirius-header

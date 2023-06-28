@@ -1,0 +1,12 @@
+version: "3.6"
+
+services:
+  cypress:
+    build:
+      context: ..
+      dockerfile: ./docker/cypress/Dockerfile
+    command: ["--headless", "-b", "chrome"]
+    volumes:
+      - ../cypress/screenshots:/root/cypress/screenshots:rw,delegated
+      - ../cypress/logs:/root/cypress/logs:rw,delegated
+

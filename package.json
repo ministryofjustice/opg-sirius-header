@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "http-server",
-    "compile-sass": "node-sass sass/main.scss css/all.css",
+    "compile-sass": "sass --load-path . --style compressed sass/main.scss css/all.css",
     "cypress": "npx cypress open",
     "cypress-headless": "cypress run --headless"
   },

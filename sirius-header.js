@@ -5,14 +5,14 @@ export class SiriusHeader extends HTMLElement {
             prefix = 'http://localhost:8080'
         }
 
-        let workflowUrl = '';
-        let supervisionUrl = '';
+        let isWorkflowSelected = '';
+        let isSupervisionPageSelected = '';
 
         if (window.location.href.indexOf("/supervision/workflow") > -1) {
-            workflowUrl = `aria-current="page"`;
+            isWorkflowSelected = `aria-current="page"`;
         }
         if (window.location.href.indexOf("/supervision") > -1) {
-            supervisionUrl = `aria-current="page"`;
+            isSupervisionPageSelected = `aria-current="page"`;
         }
 
         this.innerHTML = `  
@@ -57,7 +57,7 @@ export class SiriusHeader extends HTMLElement {
                                         <a class="moj-header__navigation-link" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
                                     <li class="moj-header__navigation-item selected-heading-link">
-                                        <a class="moj-header__navigation-link" ${supervisionUrl} href="${prefix}/supervision">
+                                        <a class="moj-header__navigation-link" ${isSupervisionPageSelected} href="${prefix}/supervision">
                                             Supervision
                                         </a>
                                     </li>
@@ -92,7 +92,7 @@ export class SiriusHeader extends HTMLElement {
                                        <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/clients/search-for-client">Create client</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
-                                        <a class="moj-primary-navigation__link" ${workflowUrl} href="${prefix}/supervision/workflow">Workflow</a>
+                                        <a class="moj-primary-navigation__link" ${isWorkflowSelected} href="${prefix}/supervision/workflow">Workflow</a>
                                     </li>
                                     <li class="moj-primary-navigation__item">
                                         <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/finance-hub/reporting">Finance</a>

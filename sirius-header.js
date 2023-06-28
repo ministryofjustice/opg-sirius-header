@@ -57,7 +57,7 @@ export class SiriusHeader extends HTMLElement {
                                         <a class="moj-header__navigation-link" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
                                     <li class="moj-header__navigation-item selected-heading-link">
-                                        <a class="moj-header__navigation-link " ${supervisionUrl} href="${prefix}/supervision">
+                                        <a class="moj-header__navigation-link" ${supervisionUrl} href="${prefix}/supervision">
                                             Supervision
                                         </a>
                                     </li>

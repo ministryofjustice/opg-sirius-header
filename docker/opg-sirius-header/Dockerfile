@@ -5,6 +5,6 @@ COPY sirius-header.js sirius-header.js
 COPY package.json package.json
 COPY index.html index.html
 
-RUN npm install
-RUN npm run compile-sass
-ENTRYPOINT ["npm", "run", "serve"]
+RUN yarn install
+RUN yarn compile-sass
+ENTRYPOINT ["yarn", "serve"]

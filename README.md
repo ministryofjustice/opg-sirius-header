@@ -3,7 +3,9 @@
 
 ## Useful commands:
 
-Download dependencies: `npm install` <br>
-Build Sass/ Css: `npm run compile-sass` <br>
-Build page with live reload: `npm run build` <br> 
-Run cypress: `npm run build` then `npm run cypress` <br>
+Download dependencies: `yarn install` <br>
+Build Sass/ Css: `yarn compile-sass` <br>
+Build page: `yarn serve` <br> 
+Run cypress: `yarn serve` then `yarn cypress` <br>
+(NB: Cypress expects the app to be running on 8080 which is the default port, 
+if this is taken and the app hosts on another app Cypress will fail)

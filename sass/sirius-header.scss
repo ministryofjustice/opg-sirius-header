@@ -1,14 +1,68 @@
 .sirius-header {
-  .moj-header__navigation-link {
+  .govuk-header__link {
     &[aria-current="page"] {
-      color: govuk-colour("blue") !important;
-      font-weight: bold;
-      text-decoration: none !important;
+      display: none;
     }
   }
 
-  .moj-header__container {
+  .govuk-header {
     max-width: none !important;
     padding: 0 govuk-spacing(3);
+  }
+
+  .opg-main-nav-container {
+    float: right !important;
+  }
+
+  .moj-primary-navigation {
+    padding: 0 govuk-spacing(5) !important;
+  }
+
+  /* 19px font for menu items in header */
+  .govuk-header__navigation-item a {
+    font-size: 1.1875rem !important;
+    font-weight: 500;
+  }
+
+  .app-\!-embedded .app-\!-embedded-hide {
+    display: none;
+  }
+
+  // When embedded, always use mobile-size wrapper spacing
+  @include govuk-media-query($from: tablet) {
+    .app-\!-embedded .govuk-width-container {
+      margin-left: $govuk-gutter-half;
+      margin-right: $govuk-gutter-half;
+    }
+
+    .app-\!-embedded .govuk-main-wrapper {
+      padding-top: govuk-spacing(4);
+      padding-bottom: govuk-spacing(4);
+    }
+  }
+
+  /* centre title in header and right-align menu */
+  @media (min-width: 769px) {
+    .govuk-header__container {
+      display: grid;
+      grid-template-columns: [one] auto [two] 0.5fr [three] 0.35fr [end];
+      margin-right: govuk-spacing(3) !important;
+      margin-left: govuk-spacing(3) !important;
+
+      .govuk-header__logo {
+        width: auto;
+        margin-bottom: 0 !important;
+        padding-right: govuk-spacing(2) !important;
+        padding-left: govuk-spacing(2) !important;
+      }
+
+      .govuk-header__service-name {
+        justify-self: center;
+      }
+
+      .govuk-header__navigation {
+        justify-self: right;
+      }
+    }
   }
 }

@@ -1,6 +1,6 @@
 # opg-sirius-header
 This is a small template repo imported into other Go repos. <br>
-There is custom CSS within the sirius-header.scss that will get pulled through into these other repos.
+There is custom CSS within the sirius-header.scss that will get pulled through into these other repos. <br>
 Use this to update the header template, when the finished changes are merged into main they will pull through into the other repos. <br>
 
 ## Development:

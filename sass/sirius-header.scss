@@ -5,6 +5,11 @@
     }
   }
 
+  .hide {
+      display: none;
+  }
+
+
   .govuk-header {
     max-width: none !important;
     padding: 0 govuk-spacing(3);

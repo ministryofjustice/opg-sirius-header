@@ -7,12 +7,14 @@ export class SiriusHeader extends HTMLElement {
 
         let isWorkflowSelected = '';
         let isSupervisionPageSelected = '';
+        let isSupervisionParentLiHidden = ''
 
         if (window.location.href.indexOf("/supervision/workflow") > -1) {
             isWorkflowSelected = `aria-current="page"`;
         }
         if (window.location.href.indexOf("/supervision") > -1) {
             isSupervisionPageSelected = `aria-current="page"`;
+            isSupervisionParentLiHidden = 'hide'
         }
 
         this.innerHTML = `  
@@ -56,7 +58,7 @@ export class SiriusHeader extends HTMLElement {
                                     <li class="govuk-header__navigation-item">
                                         <a class="govuk-header__link" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
-                                    <li class="govuk-header__navigation-item">
+                                    <li class="govuk-header__navigation-item ${isSupervisionParentLiHidden}">
                                         <a class="govuk-header__link" ${isSupervisionPageSelected} href="${prefix}/supervision">
                                             Supervision
                                         </a>

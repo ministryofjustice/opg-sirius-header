@@ -17,10 +17,10 @@ export class SiriusHeader extends HTMLElement {
 
         this.innerHTML = `  
             <div class="sirius-header">         
-                <header class="govuk-header app-!-embedded-hide"  role="banner" data-module="govuk-header">
+                <header class="govuk-header app-!-embedded-hide"  role="banner">
                     <div class="govuk-header__container">
-                         <div class="govuk-header__logo govuk-grid-column-one-third">
-                            <a href="#" class="govuk-header__link govuk-header__link--homepage">
+                         <div class="govuk-header__logo">
+                            <a class="govuk-header__link--homepage">
                                 <svg
                                         role="presentation"
                                         focusable="false"
@@ -47,11 +47,11 @@ export class SiriusHeader extends HTMLElement {
                             </a>
                         </div>
     
-                        <a class="govuk-header__link govuk-header__service-name govuk-grid-column-one-third">
+                        <a class="govuk-header__service-name">
                             Sirius
                         </a>
-                        <div class="govuk-header__logo govuk-grid-column-one-third">
-                            <nav aria-label="Menu" class="govuk-header__navigation kate">
+                        <div class="govuk-header__logo">
+                            <nav aria-label="Menu" class="govuk-header__navigation opg-main-nav-container">
                                  <ul id="header-navigation" class="govuk-header__navigation-list">
                                     <li class="govuk-header__navigation-item">
                                         <a class="govuk-header__link" href="${prefix}/lpa"> Power of Attorney</a>
@@ -78,7 +78,7 @@ export class SiriusHeader extends HTMLElement {
                 </header>
                 <div class="govuk-phase-banner">
                     <p class="govuk-phase-banner__content">
-                        <span class="govuk-phase-banner__text govuk-!-padding-left-3">
+                        <span class="govuk-phase-banner__text">
                         </span>
                     </p>
                 </div>

@@ -5,17 +5,17 @@ describe('header spec', () => {
   })
 
   it('has all of the expected information within the header', () => {
-    cy.get('.moj-header__logo').should('be.visible');
-    cy.get('.moj-header__logo > .moj-header__link').should('contain.text', 'OPG');
-    cy.contains(".moj-header__link", "Sirius");
-    cy.get('.govuk-grid-column-two-thirds').should('contain.text', 'Sirius');
+      cy.get('.govuk-header__link--homepage').should('be.visible');
+      cy.get('.govuk-header__link--homepage').should('contain.text', 'OPG');
+      cy.get('.govuk-header__service-name').should('be.visible');
+      cy.get('.govuk-header__service-name').should('contain.text', 'Sirius');
   });
 
   const expectedTitle = ["Power of Attorney", "Supervision", "Admin", "Sign out"];
   const expectedUrl = ["/lpa", "/Supervision", "/Admin", "/Logout"];
 
   it("has working nav links within header banner", () => {
-    cy.get(".moj-header__navigation-list")
+      cy.get('#header-navigation')
         .children()
         .each(($el, index) => {
           cy.wrap($el).should("contain", expectedTitle[index]);

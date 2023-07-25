@@ -1,23 +1,28 @@
 export class SiriusHeader extends HTMLElement {
-    connectedCallback() {
-        let prefix = ''
-        if (window.location.hostname === 'localhost') {
-            prefix = 'http://localhost:8080'
-        }
+  connectedCallback() {
+    const prefix =
+      window.location.hostname === "localhost" ? "http://localhost:8080" : "";
 
-        let isWorkflowSelected = '';
-        let isSupervisionPageSelected = '';
-        let isSupervisionParentLiHidden = ''
+    const navLinks = [
+      {
+        url: "/supervision/#/clients/search-for-client",
+        title: "Create client",
+      },
+      {
+        url: "/supervision/workflow",
+        title: "Workflow",
+      },
+      {
+        url: "/supervision/#/finance-hub/reporting",
+        title: "Finance",
+        hide: !this.getAttribute("show-finance"),
+      },
+    ];
 
-        if (window.location.href.indexOf("/supervision/workflow") > -1) {
-            isWorkflowSelected = `aria-current="page"`;
-        }
-        if (window.location.href.indexOf("/supervision") > -1) {
-            isSupervisionPageSelected = `aria-current="page"`;
-            isSupervisionParentLiHidden = 'hide'
-        }
+    // const financeUserRoles = ["Finance Reporting", "Corporate Finance", "Finance Manager"];
+    //const hideFinance = !financeUserRoles.includes(this.getAttribute("user-role")) ? "hide" : "";
 
-        this.innerHTML = `  
+    this.innerHTML = `  
             <div class="sirius-header">         
                 <header class="govuk-header app-!-embedded-hide"  role="banner">
                     <div class="govuk-header__container">
@@ -58,8 +63,14 @@ export class SiriusHeader extends HTMLElement {
                                     <li class="govuk-header__navigation-item">
                                         <a class="govuk-header__link" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
-                                    <li class="govuk-header__navigation-item ${isSupervisionParentLiHidden}">
-                                        <a class="govuk-header__link" ${isSupervisionPageSelected} href="${prefix}/supervision">
+                                    <li class="govuk-header__navigation-item ${
+                                      window.location.href.includes(
+                                        "/supervision"
+                                      )
+                                        ? "hide"
+                                        : ""
+                                    }">
+                                        <a class="govuk-header__link" href="${prefix}/supervision">
                                             Supervision
                                         </a>
                                     </li>
@@ -90,20 +101,30 @@ export class SiriusHeader extends HTMLElement {
                 <div class="moj-primary-navigation" role="navigation">
                     <nav class="moj-primary-navigation" aria-label="Primary navigation">
                         <ul class="moj-primary-navigation__list">
-                            <li class="moj-primary-navigation__item">
-                               <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/clients/search-for-client">Create client</a>
-                            </li>
-                            <li class="moj-primary-navigation__item">
-                                <a class="moj-primary-navigation__link" ${isWorkflowSelected} href="${prefix}/supervision/workflow">Workflow</a>
-                            </li>
-                            <li class="moj-primary-navigation__item">
-                                <a class="moj-primary-navigation__link" href="${prefix}/supervision/#/finance-hub/reporting">Finance</a>
-                            </li>
+                            ${navLinks.map(({ url, title, hide }) => {
+                              return `<li 
+                              class="moj-primary-navigation__item ${
+                                hide ? "hide" : ""
+                              }"
+                              >
+                                <a
+                                  class="moj-primary-navigation__link"
+                                  ${
+                                    window.location.href.includes(url)
+                                      ? 'aria-current="page"'
+                                      : ""
+                                  }
+                                  href="${prefix}${url}"
+                                >
+                                  ${title}
+                                </a>
+                              </li>`;
+                            })}
                         </ul>
                     </nav>
                 </div>
             </div>
     `;
-    }
+  }
 }
-customElements.define('sirius-header', SiriusHeader);
+customElements.define("sirius-header", SiriusHeader);

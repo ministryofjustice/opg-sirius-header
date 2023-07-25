@@ -12,4 +12,5 @@ env/
 node_modules
 cypress/screenshots
 cypress/videos
-css/
+public/css/
+public/js/

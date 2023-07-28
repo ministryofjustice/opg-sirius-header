@@ -1,9 +1,11 @@
 FROM node:19.3.0-alpine3.16
 
+WORKDIR /app
+
 COPY sass sass
-COPY sirius-header.js sirius-header.js
 COPY package.json package.json
-COPY index.html index.html
+COPY public public
+# COPY sirius-header.js public/js/sirius-header.js
 
 RUN yarn install
 RUN yarn compile-sass

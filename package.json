@@ -4,8 +4,9 @@
   "license": "MIT",
   "scripts": {
     "serve": "http-server",
-    "compile-sass": "sass --load-path . --style compressed sass/main.scss css/all.css",
-    "cypress": "npx cypress open",
+    "serve-local": "http-server .",
+    "compile-sass": "sass --load-path . --style compressed sass/main.scss public/css/all.css",
+    "cypress": "cypress open",
     "cypress-headless": "cypress run --headless"
   },
   "devDependencies": {
@@ -13,7 +14,8 @@
     "cypress": "^12.15.0",
     "govuk-frontend": "^4.3.1",
     "http-server": "v14.1.1",
-    "sass": "^1.63.6"
+    "sass": "^1.63.6",
+    "esbuild": "0.18.17"
   },
   "dependencies": {
     "scss": "^0.2.4"

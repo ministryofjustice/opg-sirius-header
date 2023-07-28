@@ -21,19 +21,23 @@ Then rebuild the css/ js styling in workflow). <br> It should pull through the l
 
 #### To build locally:
 
-Download dependencies: `yarn install` <br>
-Build Sass/ Css: `yarn compile-sass` <br>
-Copy the web component: `yarn copy-js` <br>
-Build page: `yarn serve` <br>
+- Download dependencies: `yarn install` <br>
+- Build Sass/ Css: `yarn compile-sass` <br>
+- Build page: `yarn serve-local` <br>
+
 This will then host with http-server, it's usually on 8080 but the console will tell you which port it's been hosted on.
+
+Alternatively, you can use Docker: `docker-compose up opg-sirius-header`
 
 ##### Testing:
 
-Run cypress: `yarn serve` then `yarn cypress` in another console window <br>
+Due to the requirements for testing conditional rendering, the header needs to be served via Docker in order to use the `public/` directory structure:
+
+- Run `docker-compose up opg-sirius-header`
+- Run `yarn cypress` in another console window
+
 (NB: Cypress expects the app to be running on 8080 which is the default port,
 if this is taken and the app hosts on another port Cypress will fail)
-
-In order to test the conditional rendering on additional routes, you can use the directory structure within the public directory to mock Sirius' routing.
 
 #### To import into a new app that isn't currently using it:
 

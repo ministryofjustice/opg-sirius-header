@@ -2,6 +2,7 @@ export class SiriusHeader extends HTMLElement {
   connectedCallback() {
     const prefix =
       window.location.hostname === "localhost" ? "http://localhost:8080" : "";
+    const showFinance = this.getAttribute("show-finance") == "true";
 
     const navLinks = [
       {
@@ -15,7 +16,7 @@ export class SiriusHeader extends HTMLElement {
       {
         url: "/supervision/#/finance-hub/reporting",
         title: "Finance",
-        hide: !this.getAttribute("show-finance"),
+        hide: !showFinance,
       },
     ];
 

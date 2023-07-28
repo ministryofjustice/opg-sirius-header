@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "http-server",
+    "serve-local": "http-server .",
     "compile-sass": "sass --load-path . --style compressed sass/main.scss public/css/all.css",
-    "copy-js": "copyfiles sirius-header.js public/js",
     "cypress": "cypress open",
     "cypress-headless": "cypress run --headless"
   },
@@ -15,7 +15,7 @@
     "govuk-frontend": "^4.3.1",
     "http-server": "v14.1.1",
     "sass": "^1.63.6",
-    "copyfiles": "2.4.1"
+    "esbuild": "0.18.17"
   },
   "dependencies": {
     "scss": "^0.2.4"

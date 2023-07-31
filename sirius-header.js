@@ -99,8 +99,9 @@ export class SiriusHeader extends HTMLElement {
                 <div class="moj-primary-navigation" role="navigation">
                     <nav class="moj-primary-navigation" aria-label="Primary navigation">
                         <ul class="moj-primary-navigation__list">
-                            ${navLinks.map(({ url, title, hide }) => {
-                              return `<li 
+                            ${navLinks
+                              .map(({ url, title, hide }) => {
+                                return `<li 
                               class="moj-primary-navigation__item ${
                                 hide ? "hide" : ""
                               }"
@@ -117,7 +118,8 @@ export class SiriusHeader extends HTMLElement {
                                   ${title}
                                 </a>
                               </li>`;
-                            })}
+                              })
+                              .join("")}
                         </ul>
                     </nav>
                 </div>

@@ -11,11 +11,13 @@
   },
   "devDependencies": {
     "@ministryofjustice/frontend": "^1.0.0",
+    "axe-core": "^4.7.2",
     "cypress": "^12.15.0",
+    "cypress-axe": "^1.4.0",
+    "esbuild": "0.18.17",
     "govuk-frontend": "^4.3.1",
     "http-server": "v14.1.1",
-    "sass": "^1.63.6",
-    "esbuild": "0.18.17"
+    "sass": "^1.63.6"
   },
   "dependencies": {
     "scss": "^0.2.4"

@@ -1,3 +1,5 @@
+import "cypress-axe";
+
 describe("header spec", () => {
   it("has all of the expected information within the header", () => {
     cy.visit("index.html");
@@ -78,5 +80,16 @@ describe("header spec", () => {
     cy.get(".moj-primary-navigation__list")
       .contains("Finance")
       .should("be.hidden");
+  });
+
+  it("meets accessibility standards", () => {
+    cy.visit("/index.html");
+    cy.injectAxe();
+    cy.checkA11y(null, {
+      rules: {
+        "landmark-one-main": { enabled: false },
+        "page-has-heading-one": { enabled: false },
+      },
+    });
   });
 });

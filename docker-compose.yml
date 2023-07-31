@@ -16,5 +16,7 @@ services:
     build:
       context: .
       dockerfile: docker/cypress/Dockerfile
+    volumes:
+      - ../cypress/screenshots:/root/cypress/screenshots:rw,delegated
     depends_on:
       - opg-sirius-header

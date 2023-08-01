@@ -2,7 +2,13 @@ export class SiriusHeader extends HTMLElement {
   connectedCallback() {
     const prefix =
       window.location.hostname === "localhost" ? "http://localhost:8080" : "";
-    const showFinance = this.getAttribute("show-finance") == "true";
+
+    const userRoles = this.getAttribute("user-roles") ?? [];
+    const isFinanceUser = [
+      "Finance Reporting",
+      "Corporate Finance",
+      "Finance Manager",
+    ].some((r) => userRoles.includes(r));
 
     const navLinks = [
       {
@@ -16,7 +22,7 @@ export class SiriusHeader extends HTMLElement {
       {
         url: "/supervision/#/finance-hub/reporting",
         title: "Finance",
-        hide: !showFinance,
+        hide: !isFinanceUser,
       },
     ];
 

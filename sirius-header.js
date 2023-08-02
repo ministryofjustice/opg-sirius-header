@@ -4,7 +4,15 @@ export class SiriusHeader extends HTMLElement {
       window.location.hostname === "localhost" ? "http://localhost:8080" : "";
     const showFinance = this.getAttribute("show-finance") == "true";
 
-    const navLinks = [
+    /* Default nav links for Sirius Supervision; can be overridden
+     * by defining <sirius-header-nav url="/path/to/resource" hide="true">Text for link</sirius-header-nav>
+     * elements inside the <sirius-header> element.
+     *
+     * Note that you shouldn't mix the show-finance attribute with
+     * custom <sirius-header-nav> elements, as the child elements
+     * can define their own hide attribute.
+     */
+    let navLinks = [
       {
         url: "/supervision/#/clients/search-for-client",
         title: "Create client",
@@ -19,6 +27,21 @@ export class SiriusHeader extends HTMLElement {
         hide: !showFinance,
       },
     ];
+
+    // Override the nav links if <sirius-header-nav> elements are defined
+    // inside the <sirius-header>.
+    const navElements = this.querySelectorAll('sirius-header-nav');
+    if (navElements.length > 0) {
+        navLinks = [];
+
+        navElements.forEach((navElement) => {
+            navLinks.push({
+                url: navElement.getAttribute('url'),
+                hide: navElement.getAttribute('hide') === 'true',
+                title: navElement.textContent,
+            });
+        });
+    }
 
     this.innerHTML = `  
             <div class="sirius-header">         

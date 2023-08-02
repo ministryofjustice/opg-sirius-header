@@ -92,4 +92,35 @@ describe("header spec", () => {
       },
     });
   });
+
+  it("can be customised with sirius-header-nav elements", () => {
+    cy.visit("/lpa");
+    let linkTextContents = [];
+
+    const navList = cy.get(".moj-primary-navigation__link").each((item) => {
+      linkTextContents.push(item.text().trim());
+    }).then(() => {
+      cy.wrap(linkTextContents).should("eql", ["Case list", "Another nav item"]);
+    });
+  });
+
+  it("meets accessibility standards", () => {
+    cy.visit("/index.html");
+    cy.injectAxe();
+    cy.checkA11y(null, {
+      rules: {
+        "landmark-one-main": { enabled: false },
+        "page-has-heading-one": { enabled: false },
+      },
+    });
+
+    cy.visit("/lpa");
+    cy.injectAxe();
+    cy.checkA11y(null, {
+      rules: {
+        "landmark-one-main": { enabled: false },
+        "page-has-heading-one": { enabled: false },
+      },
+    });
+  });
 });

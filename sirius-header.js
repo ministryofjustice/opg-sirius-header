@@ -10,14 +10,6 @@ export class SiriusHeader extends HTMLElement {
       "Finance Manager",
     ].some((r) => userRoles.includes(r));
 
-    /* Default nav links for Sirius Supervision; can be overridden
-     * by defining <sirius-header-nav url="/path/to/resource" hide="true">Text for link</sirius-header-nav>
-     * elements inside the <sirius-header> element.
-     *
-     * Note that you shouldn't mix the show-finance attribute with
-     * custom <sirius-header-nav> elements, as the child elements
-     * can define their own hide attribute.
-     */
     let navLinks = [
       {
         url: "/supervision/#/clients/search-for-client",
@@ -40,7 +32,7 @@ export class SiriusHeader extends HTMLElement {
     ];
 
     // Override the nav links if <sirius-header-nav> elements are defined
-    // inside the <sirius-header>.
+    // inside the <sirius-header>
     const navElements = this.querySelectorAll('sirius-header-nav');
     if (navElements.length > 0) {
         navLinks = [];

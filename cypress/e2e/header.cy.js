@@ -31,10 +31,11 @@ describe("header spec", () => {
 
   it("has all the expected links within the secondary nav list", () => {
     cy.visit("index.html");
-    const expectedTitle = ["Create client", "Workflow", "Finance"];
+    const expectedTitle = ["Create client", "Workflow", "Guidance", "Finance"];
     const expectedUrl = [
       "/supervision/#/clients/search-for-client",
       "/supervision/workflow",
+      "https://wordpress.sirius.opg.service.justice.gov.uk",
       "/supervision/#/finance-hub/reporting",
     ];
     cy.get("#header-navigation")

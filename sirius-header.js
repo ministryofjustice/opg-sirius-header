@@ -7,16 +7,21 @@ export class SiriusHeader extends HTMLElement {
     const navLinks = [
       {
         url: "/supervision/#/clients/search-for-client",
-        title: "Create client",
+        title: "Create client"
       },
       {
         url: "/supervision/workflow",
-        title: "Workflow",
+        title: "Workflow"
+      },
+      {
+        url: "https://wordpress.sirius.opg.service.justice.gov.uk",
+        title: "Guidance",
+        openNewTab: true
       },
       {
         url: "/supervision/#/finance-hub/reporting",
         title: "Finance",
-        hide: !showFinance,
+        hide: !showFinance
       },
     ];
 
@@ -100,7 +105,7 @@ export class SiriusHeader extends HTMLElement {
                     <nav class="moj-primary-navigation" aria-label="Primary navigation">
                         <ul class="moj-primary-navigation__list">
                             ${navLinks
-                              .map(({ url, title, hide }) => {
+                              .map(({ url, title, hide, openNewTab }) => {
                                 return `<li 
                               class="moj-primary-navigation__item ${
                                 hide ? "hide" : ""
@@ -114,6 +119,7 @@ export class SiriusHeader extends HTMLElement {
                                       : ""
                                   }
                                   href="${prefix}${url}"
+                                 ${openNewTab ? 'target="_blank"' : ""}
                                 >
                                   ${title}
                                 </a>

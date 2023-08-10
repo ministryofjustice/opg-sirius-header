@@ -86,11 +86,6 @@ describe("header spec", () => {
   it("meets accessibility standards", () => {
     cy.visit("/index.html");
     cy.injectAxe();
-    cy.checkA11y(null, {
-      rules: {
-        "landmark-one-main": { enabled: false },
-        "page-has-heading-one": { enabled: false },
-      },
-    });
+    cy.checkA11y();
   });
 });

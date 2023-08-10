@@ -13,27 +13,27 @@ export class SiriusHeader extends HTMLElement {
     const navLinks = [
       {
         url: "/supervision/#/clients/search-for-client",
-        title: "Create client"
+        title: "Create client",
       },
       {
         url: "/supervision/workflow",
-        title: "Workflow"
+        title: "Workflow",
       },
       {
         url: "https://wordpress.sirius.opg.service.justice.gov.uk",
         title: "Guidance",
-        openNewTab: true
+        openNewTab: true,
       },
       {
         url: "/supervision/#/finance-hub/reporting",
         title: "Finance",
-        hide: !isFinanceUser,
+        // hide: !isFinanceUser,
+        hide: false,
       },
     ];
 
     this.innerHTML = `  
-            <div class="sirius-header">         
-                <header class="govuk-header app-!-embedded-hide"  role="banner">
+                <header class="sirius-header govuk-header app-!-embedded-hide"  role="banner">
                     <div class="govuk-header__container">
                          <div class="govuk-header__logo">
                             <a class="govuk-header__link--homepage">
@@ -97,8 +97,7 @@ export class SiriusHeader extends HTMLElement {
                             </nav>
                         </div>
                     </div>
-                </header>
-                <div class="govuk-phase-banner">
+                    <div class="govuk-phase-banner">
                     <p class="govuk-phase-banner__content">
                         <span class="govuk-phase-banner__text">
                         </span>
@@ -135,7 +134,7 @@ export class SiriusHeader extends HTMLElement {
                         </ul>
                     </nav>
                 </div>
-            </div>
+                </header>
     `;
   }
 }

@@ -45,3 +45,19 @@ Add dependency to package.json in repo you want to import it into `"opg-sirius-h
 Import the SCSS from sirius-header into the repo's main.scss file `@import "node_modules/opg-sirius-header/sass/sirius-header"` <br>
 Import module into repo's main.js file `import "opg-sirius-header/sirius-header.js"` <br>
 Run `Yarn install` and build the CSS locally
+
+To incorporate the header into a page, use this HTML:
+
+```
+<sirius-header></sirius-header>
+```
+
+This inserts a header with the default Sirius Supervision links in the primary navigation. These links can be customised
+with `<sirius-header-nav>` elements as follows:
+
+```
+<sirius-header>
+    <sirius-header-nav url="/lpa">Case list</sirius-header-nav>
+    <sirius-header-nav url="/another/path">Another link</sirius-header-nav>
+</sirius-header>
+```

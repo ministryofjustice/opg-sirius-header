@@ -10,7 +10,7 @@ export class SiriusHeader extends HTMLElement {
       "Finance Manager",
     ].some((r) => userRoles.includes(r));
 
-    const navLinks = [
+    let navLinks = [
       {
         url: "/supervision/#/clients/search-for-client",
         title: "Create client"
@@ -30,6 +30,21 @@ export class SiriusHeader extends HTMLElement {
         hide: !isFinanceUser,
       },
     ];
+
+    // Override the nav links if <sirius-header-nav> elements are defined
+    // inside the <sirius-header>
+    const navElements = this.querySelectorAll('sirius-header-nav');
+    if (navElements.length > 0) {
+        navLinks = [];
+
+        navElements.forEach((navElement) => {
+            navLinks.push({
+                url: navElement.getAttribute('url'),
+                hide: navElement.getAttribute('hide') === 'true',
+                title: navElement.textContent,
+            });
+        });
+    }
 
     this.innerHTML = `  
             <div class="sirius-header">         

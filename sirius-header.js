@@ -12,20 +12,20 @@ export class SiriusHeader extends HTMLElement {
 
     let navLinks = [
       {
-        url: "/supervision/#/clients/search-for-client",
-        title: "Create client"
+        url: `${prefix}/supervision/#/clients/search-for-client`,
+        title: "Create client",
       },
       {
-        url: "/supervision/workflow",
-        title: "Workflow"
+        url: `${prefix}/supervision/workflow`,
+        title: "Workflow",
       },
       {
         url: "https://wordpress.sirius.opg.service.justice.gov.uk",
         title: "Guidance",
-        openNewTab: true
+        openNewTab: true,
       },
       {
-        url: "/supervision/#/finance-hub/reporting",
+        url: `${prefix}/supervision/#/finance-hub/reporting`,
         title: "Finance",
         hide: !isFinanceUser,
       },
@@ -33,17 +33,17 @@ export class SiriusHeader extends HTMLElement {
 
     // Override the nav links if <sirius-header-nav> elements are defined
     // inside the <sirius-header>
-    const navElements = this.querySelectorAll('sirius-header-nav');
+    const navElements = this.querySelectorAll("sirius-header-nav");
     if (navElements.length > 0) {
-        navLinks = [];
+      navLinks = [];
 
-        navElements.forEach((navElement) => {
-            navLinks.push({
-                url: navElement.getAttribute('url'),
-                hide: navElement.getAttribute('hide') === 'true',
-                title: navElement.textContent,
-            });
+      navElements.forEach((navElement) => {
+        navLinks.push({
+          url: navElement.getAttribute("url"),
+          hide: navElement.getAttribute("hide") === "true",
+          title: navElement.textContent,
         });
+      });
     }
 
     this.innerHTML = `  
@@ -139,7 +139,7 @@ export class SiriusHeader extends HTMLElement {
                                       ? 'aria-current="page"'
                                       : ""
                                   }
-                                  href="${prefix}${url}"
+                                  href="${url}"
                                   ${openNewTab ? 'target="_blank"' : ""}
                                 >
                                   ${title}

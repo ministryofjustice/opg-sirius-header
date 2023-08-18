@@ -98,11 +98,17 @@ describe("header spec", () => {
     cy.visit("/lpa");
     let linkTextContents = [];
 
-    const navList = cy.get(".moj-primary-navigation__link").each((item) => {
-      linkTextContents.push(item.text().trim());
-    }).then(() => {
-      cy.wrap(linkTextContents).should("eql", ["Case list", "Another nav item"]);
-    });
+    const navList = cy
+      .get(".moj-primary-navigation__link")
+      .each((item) => {
+        linkTextContents.push(item.text().trim());
+      })
+      .then(() => {
+        cy.wrap(linkTextContents).should("eql", [
+          "Case list",
+          "Another nav item",
+        ]);
+      });
   });
 
   it("meets accessibility standards", () => {

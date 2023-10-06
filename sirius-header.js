@@ -122,34 +122,32 @@ export class SiriusHeader extends HTMLElement {
         
                 <div id="nav-search">
                 </div>
-                <div class="moj-primary-navigation" role="navigation">
-                    <nav class="moj-primary-navigation" aria-label="Primary navigation">
-                        <ul class="moj-primary-navigation__list">
-                            ${navLinks
-                              .map(({ url, title, hide, openNewTab }) => {
-                                return `<li 
-                              class="moj-primary-navigation__item ${
-                                hide ? "hide" : ""
-                              }"
-                              >
-                                <a
-                                  class="moj-primary-navigation__link"
-                                  ${
-                                    window.location.href.includes(url)
-                                      ? 'aria-current="page"'
-                                      : ""
-                                  }
-                                  href="${url}"
-                                  ${openNewTab ? 'target="_blank"' : ""}
-                                >
-                                  ${title}
-                                </a>
-                              </li>`;
-                              })
-                              .join("")}
-                        </ul>
-                    </nav>
-                </div>
+                <nav class="moj-primary-navigation" role="navigation" aria-label="Primary navigation">
+                    <ul class="moj-primary-navigation__list">
+                        ${navLinks
+                          .map(({ url, title, hide, openNewTab }) => {
+                            return `<li 
+                          class="moj-primary-navigation__item ${
+                            hide ? "hide" : ""
+                          }"
+                          >
+                            <a
+                              class="moj-primary-navigation__link"
+                              ${
+                                window.location.href.includes(url)
+                                  ? 'aria-current="page"'
+                                  : ""
+                              }
+                              href="${url}"
+                              ${openNewTab ? 'target="_blank"' : ""}
+                            >
+                              ${title}
+                            </a>
+                          </li>`;
+                        })
+                        .join("")}
+                    </ul>
+                </nav>
             </div>
     `;
   }

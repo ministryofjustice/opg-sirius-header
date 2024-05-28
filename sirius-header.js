@@ -87,13 +87,7 @@ export class SiriusHeader extends HTMLElement {
                                     <li class="govuk-header__navigation-item">
                                         <a class="govuk-header__link" href="${prefix}/lpa"> Power of Attorney</a>
                                     </li>
-                                    <li class="govuk-header__navigation-item ${
-                                      window.location.href.includes(
-                                        "/supervision"
-                                      )
-                                        ? "hide"
-                                        : ""
-                                    }">
+                                    <li class="govuk-header__navigation-item">
                                         <a class="govuk-header__link" href="${prefix}/supervision">
                                             Supervision
                                         </a>

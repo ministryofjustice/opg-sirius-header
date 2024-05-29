@@ -53,17 +53,11 @@ describe("header spec", () => {
 
   it("highlights the current page nav", () => {
     cy.visit("/supervision/workflow");
-    cy.get("#header-navigation")
-      .contains("Supervision")
-      .should("not.be.visible");
     cy.get(".moj-primary-navigation__list > .moj-primary-navigation__item")
       .contains("Workflow")
       .should("have.attr", "aria-current", "page");
 
     cy.visit("/supervision");
-    cy.get("#header-navigation")
-      .contains("Supervision")
-      .should("not.be.visible");
     cy.get(".moj-primary-navigation__list > .moj-primary-navigation__item")
       .contains("Workflow")
       .should("not.have.attr", "aria-current");

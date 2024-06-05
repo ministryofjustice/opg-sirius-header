@@ -12,7 +12,7 @@
   "devDependencies": {
     "@ministryofjustice/frontend": "^1.0.0",
     "axe-core": "^4.7.2",
-    "cypress": "^12.15.0",
+    "cypress": "12.17.0",
     "cypress-axe": "^1.4.0",
     "esbuild": "0.18.17",
     "govuk-frontend": "^4.3.1",
@@ -20,6 +20,7 @@
     "sass": "^1.63.6"
   },
   "dependencies": {
+    "@cypress/request": "3.0.0",
     "scss": "^0.2.4"
   }
 }

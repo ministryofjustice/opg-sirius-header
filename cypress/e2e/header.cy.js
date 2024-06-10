@@ -51,6 +51,13 @@ describe("header spec", () => {
       });
   });
 
+  it("has all the expected links within the secondary nav list", () => {
+    cy.visit("index.html");
+    cy.get("#feedback-span")
+       .should("have.attr", "href")
+        .and("contain", "/supervision/feedback");
+  });
+
   it("highlights the current page nav", () => {
     cy.visit("/supervision/workflow");
     cy.get(".moj-primary-navigation__list > .moj-primary-navigation__item")

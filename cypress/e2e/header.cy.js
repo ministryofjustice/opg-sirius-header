@@ -51,11 +51,10 @@ describe("header spec", () => {
       });
   });
 
-  it("has all the expected links within the secondary nav list", () => {
+  it("has the feedback link", () => {
     cy.visit("index.html");
-    cy.get("#feedback-span")
-       .should("have.attr", "href")
-        .and("contain", "/supervision/feedback");
+    cy.get("#feedback-link").should("have.attr", "href");
+    cy.get("#feedback-link").should("contain", "/supervision/feedback");
   });
 
   it("highlights the current page nav", () => {

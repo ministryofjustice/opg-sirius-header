@@ -109,9 +109,10 @@ export class SiriusHeader extends HTMLElement {
                 </header>
                 <div class="govuk-phase-banner">
                     <p class="govuk-phase-banner__content">
+                       <span class="govuk-visually-hidden">(opens in new tab) </span>
                        <span id="feedback-span" class="govuk-phase-banner__text govuk-!-padding-left-5">
-                            Your <a id="feedback-link" class="govuk-link" href="${prefix}/supervision/feedback" target="_blank" rel="opener">feedback</a> will help us to improve this service.
-                        </span>
+                           Your <a id="feedback-link" class="govuk-link" href="${prefix}/supervision/feedback" rel="noreferrer noopener">feedback</a> will help us to improve this service.
+                       </span>
                     </p>
                 </div>
         

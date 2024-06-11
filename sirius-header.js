@@ -102,23 +102,29 @@ export class SiriusHeader extends HTMLElement {
                                             Sign out
                                         </a>
                                     </li>
+                                     <li class="govuk-header__navigation-item">
+                                        <a class="govuk-header__link" href="${prefix}/auth/logout">
+                                            Sign out new
+                                        </a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
                 </header>
-                <div class="govuk-phase-banner">
-                    <p class="govuk-phase-banner__content">
-                       <span class="govuk-visually-hidden">(opens in new tab) </span>
-                       <span id="feedback-span" class="govuk-phase-banner__text govuk-!-padding-left-5">
-                           Your <a id="feedback-link" class="govuk-link" href="${prefix}/supervision/feedback" rel="noreferrer noopener">feedback</a> will help us to improve this service.
-                       </span>
-                    </p>
-                </div>
-        
                 <div id="nav-search">
                 </div>
+                <section class=govuk-phase-banner"> 
+                    <div class="govuk-phase-banner">
+                        <p class="govuk-phase-banner__content">
+                           <span id="feedback-span" class="govuk-phase-banner__text govuk-!-padding-left-5">
+                                Your <a id="feedback-link" class="govuk-link" href="${prefix}/supervision/feedback" target="_blank" rel="opener">feedback</a> will help us to improve this service.
+                            </span>
+                        </p>
+                    </div>
+                </section>
                 <nav class="moj-primary-navigation" role="navigation" aria-label="Primary navigation">
+            
                     <ul class="moj-primary-navigation__list">
                         ${navLinks
                           .map(({ url, title, hide, openNewTab }) => {

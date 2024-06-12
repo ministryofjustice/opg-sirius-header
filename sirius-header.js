@@ -107,13 +107,15 @@ export class SiriusHeader extends HTMLElement {
                         </div>
                     </div>
                 </header>
-                <div class="govuk-phase-banner">
-                    <p class="govuk-phase-banner__content">
-                        <span class="govuk-phase-banner__text">
-                        </span>
-                    </p>
-                </div>
-        
+                <nav class=govuk-phase-banner" aria-label="feedback-banner-navigation"> 
+                    <div class="govuk-phase-banner">
+                        <p class="govuk-phase-banner__content">
+                           <span id="feedback-span" id="feedback-span" class="govuk-phase-banner__text govuk-!-padding-left-5">
+                                Your <a id="feedback-link" class="govuk-link" href="${prefix}/supervision/feedback" target="_blank" rel="opener">feedback</a> will help us to improve this service.
+                            </span>
+                        </p>
+                    </div>
+                </nav>
                 <div id="nav-search">
                 </div>
                 <nav class="moj-primary-navigation" role="navigation" aria-label="Primary navigation">

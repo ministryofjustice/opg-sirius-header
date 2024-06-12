@@ -13,7 +13,7 @@ describe("header spec", () => {
     "Admin",
     "Sign out",
   ];
-  const expectedUrl = ["/lpa", "/Supervision", "/Admin", "/Logout"];
+  const expectedUrl = ["/lpa", "/supervision", "/admin", "/logout"];
 
   it("has working nav links within header banner", () => {
     cy.visit("index.html");
@@ -21,7 +21,7 @@ describe("header spec", () => {
       .children()
       .each(($el, index) => {
         cy.wrap($el).should("contain", expectedTitle[index]);
-        const $expectedLinkName = expectedUrl[index].toLowerCase();
+        const $expectedLinkName = expectedUrl[index];
         cy.wrap($el)
           .find("a")
           .should("have.attr", "href")
@@ -43,12 +43,17 @@ describe("header spec", () => {
       .children()
       .each(($el, index) => {
         cy.wrap($el).should("contain", expectedTitle[index]);
-        const $expectedLinkName = expectedUrl[index].toLowerCase();
+        const $expectedLinkName = expectedUrl[index];
         cy.wrap($el)
           .find("a")
           .should("have.attr", "href")
           .and("contain", `${$expectedLinkName}`);
       });
+  });
+
+  it("has the feedback link", () => {
+    cy.visit("index.html");
+    cy.get("#feedback-span").find("a").should("contain", "feedback");
   });
 
   it("highlights the current page nav", () => {

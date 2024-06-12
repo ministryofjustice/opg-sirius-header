@@ -9,7 +9,6 @@
       display: none;
   }
 
-
   .govuk-header {
     max-width: none !important;
     padding: 0 govuk-spacing(3);
@@ -70,4 +69,8 @@
       }
     }
   }
+}
+
+#feedback-span {
+  padding-left: 35px !important;
 }

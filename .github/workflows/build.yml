@@ -35,8 +35,8 @@ jobs:
 
       - name: Build & Test
         run: |
-          docker-compose build
-          docker-compose run cypress
+          docker compose build
+          docker compose run cypress
 
       - name: Bump version
         if: github.actor != 'dependabot[bot]'

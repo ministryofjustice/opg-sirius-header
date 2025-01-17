@@ -1,7 +1,12 @@
 export class SiriusHeader extends HTMLElement {
   connectedCallback() {
-    const prefix =
+    let prefix =
       window.location.hostname === "localhost" ? "http://localhost:8080" : "";
+    const financeFlag = this.getAttribute("finance-flag") ?? 0;
+
+    if (financeFlag === "1") {
+      prefix = window.location.hostname === "localhost" ? "http://localhost:8888/finance-admin/downloads" : window.location.hostname + "/finance-admin/downloads";
+    }
 
     const userRoles = this.getAttribute("user-roles") ?? [];
     const isFinanceUser = [

@@ -1,5 +1,6 @@
 export class SiriusHeader extends HTMLElement {
   connectedCallback() {
+    let prefixFinance
     const isLocalHost = window.location.hostname === "localhost"
     let prefix = isLocalHost ? "http://localhost:8080" : "";
     const financeFlag = this.getAttribute("finance-flag") ?? 0;
@@ -7,7 +8,7 @@ export class SiriusHeader extends HTMLElement {
     let paymentsLink = '/supervision/#/finance-hub/reporting'
 
     if (financeFlag === "1") {
-      prefix = isLocalHost ? "http://localhost:8888/finance-admin/downloads" : window.location.hostname;
+      prefixFinance = isLocalHost ? "http://localhost:8888/finance-admin/downloads" : prefix;
       paymentsLink = isLocalHost ? "" : "/supervision/finance-admin/downloads";
     }
 
@@ -33,7 +34,7 @@ export class SiriusHeader extends HTMLElement {
         openNewTab: true,
       },
       {
-        url: `${prefix}${paymentsLink}`,
+        url: `${prefixFinance}${paymentsLink}`,
         title: "Finance",
         hide: !isFinanceUser,
       },

@@ -1,7 +1,15 @@
 export class SiriusHeader extends HTMLElement {
   connectedCallback() {
-    const prefix =
-      window.location.hostname === "localhost" ? "http://localhost:8080" : "";
+    const isLocalHost = window.location.hostname === "localhost"
+    let prefix = isLocalHost ? "http://localhost:8080" : "";
+    const financeFlag = this.getAttribute("finance-flag") ?? 0;
+
+    let paymentsLink = '/supervision/#/finance-hub/reporting'
+
+    if (financeFlag === "1") {
+      prefix = isLocalHost ? "http://localhost:8888/finance-admin/downloads" : "";
+      paymentsLink = isLocalHost ? "" : "/supervision/finance-admin/downloads";
+    }
 
     const userRoles = this.getAttribute("user-roles") ?? [];
     const isFinanceUser = [
@@ -25,7 +33,7 @@ export class SiriusHeader extends HTMLElement {
         openNewTab: true,
       },
       {
-        url: `${prefix}/supervision/#/finance-hub/reporting`,
+        url: `${prefix}${paymentsLink}`,
         title: "Finance",
         hide: !isFinanceUser,
       },

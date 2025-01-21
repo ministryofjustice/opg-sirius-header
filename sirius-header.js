@@ -7,7 +7,7 @@ export class SiriusHeader extends HTMLElement {
     let paymentsLink = '/supervision/#/finance-hub/reporting'
 
     if (financeFlag === "1") {
-      prefix = isLocalHost ? "http://localhost:8888/finance-admin/downloads" : window.location.hostname;
+      prefix = isLocalHost ? "http://localhost:8888/finance-admin/downloads" : "";
       paymentsLink = isLocalHost ? "" : "/supervision/finance-admin/downloads";
     }
 

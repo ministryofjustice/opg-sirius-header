@@ -13,8 +13,6 @@ export class SiriusHeader extends HTMLElement {
     const userRoles = this.getAttribute("user-roles") ?? [];
     const isFinanceUser = [
       "Finance Reporting",
-      "Corporate Finance",
-      "Finance Manager",
     ].some((r) => userRoles.includes(r));
 
     let navLinks = [

@@ -20,7 +20,7 @@
     "sass": "^1.63.6"
   },
   "dependencies": {
-    "@cypress/request": "3.0.0",
+    "@cypress/request": "3.0.8",
     "scss": "^0.2.4"
   }
 }

@@ -36,7 +36,7 @@ describe("header spec", () => {
       "/supervision/#/clients/search-for-client",
       "/supervision/workflow",
       "https://wordpress.sirius.opg.service.justice.gov.uk",
-      "/supervision/#/finance-hub/reporting",
+      "/supervision/finance-admin/downloads",
     ];
     cy.get("#header-navigation")
       .get(".moj-primary-navigation__list")

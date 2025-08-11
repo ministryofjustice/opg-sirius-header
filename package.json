@@ -14,13 +14,10 @@
     "axe-core": "^4.7.2",
     "cypress": "12.17.0",
     "cypress-axe": "^1.4.0",
+    "@cypress/request": "3.0.0",
     "esbuild": "0.18.17",
     "govuk-frontend": "^4.3.1",
     "http-server": "v14.1.1",
     "sass": "^1.63.6"
-  },
-  "dependencies": {
-    "@cypress/request": "3.0.0",
-    "scss": "^0.2.4"
   }
 }

@@ -10,7 +10,7 @@
     "cypress-headless": "cypress run --headless"
   },
   "devDependencies": {
-    "@cypress/request": "3.0.0",
+    "@cypress/request": "3.0.9",
     "@ministryofjustice/frontend": "^1.0.0",
     "axe-core": "^4.7.2",
     "cypress": "^13.17.0",

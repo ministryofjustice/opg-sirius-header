@@ -2,13 +2,13 @@ export class SiriusHeader extends HTMLElement {
   connectedCallback() {
     const prefix = window.location.hostname === "localhost" ? "http://localhost:8080" : "";
 
-    const userRoles = this.getAttribute("user-roles") ?? [];
-    const isFinanceUser = [
-      "Finance Reporting",
-      "Corporate Finance",
-      "Finance Manager",
-      "System Admin",
-    ].some((r) => userRoles.includes(r));
+    // const userRoles = this.getAttribute("user-roles") ?? [];
+    // const isFinanceUser = [
+    //   "Finance Reporting",
+    //   "Corporate Finance",
+    //   "Finance Manager",
+    //   "System Admin",
+    // ].some((r) => userRoles.includes(r));
 
     let navLinks = [
       {
@@ -27,7 +27,7 @@ export class SiriusHeader extends HTMLElement {
       {
         url: `${prefix}/supervision/finance-admin/downloads`,
         title: "Finance",
-        hide: !isFinanceUser,
+        // hide: !isFinanceUser,
       },
     ];
 
@@ -40,7 +40,7 @@ export class SiriusHeader extends HTMLElement {
       navElements.forEach((navElement) => {
         navLinks.push({
           url: navElement.getAttribute("url"),
-          hide: navElement.getAttribute("hide") === "true",
+          // hide: navElement.getAttribute("hide") === "true",
           title: navElement.textContent,
         });
       });

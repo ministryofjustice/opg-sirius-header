@@ -40,7 +40,7 @@ export class SiriusHeader extends HTMLElement {
       navElements.forEach((navElement) => {
         navLinks.push({
           url: navElement.getAttribute("url"),
-          hide: navElement.getAttribute("hide") === "true",
+          // hide: navElement.getAttribute("hide") === "true",
           title: navElement.textContent,
         });
       });

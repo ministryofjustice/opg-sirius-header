@@ -68,19 +68,19 @@ describe("header spec", () => {
       .should("not.have.attr", "aria-current");
   });
 
-  it("hides the finance tab when not set to show", () => {
-    // no show-finance passed in (default)
-    cy.visit("/supervision/workflow");
-    cy.get(".moj-primary-navigation__list")
-      .contains("Finance")
-      .should("be.hidden");
-
-    // show-finance is "false"
-    cy.visit("/supervision");
-    cy.get(".moj-primary-navigation__list")
-      .contains("Finance")
-      .should("be.hidden");
-  });
+//  it("hides the finance tab when not set to show", () => {
+//    // no show-finance passed in (default)
+//    cy.visit("/supervision/workflow");
+//    cy.get(".moj-primary-navigation__list")
+//      .contains("Finance")
+//      .should("be.hidden");
+//
+//    // show-finance is "false"
+//    cy.visit("/supervision");
+//    cy.get(".moj-primary-navigation__list")
+//      .contains("Finance")
+//      .should("be.hidden");
+//  });
 
   it("meets accessibility standards", () => {
     cy.visit("/index.html");

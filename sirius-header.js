@@ -2,14 +2,6 @@ export class SiriusHeader extends HTMLElement {
   connectedCallback() {
     const prefix = window.location.hostname === "localhost" ? "http://localhost:8080" : "";
 
-    const userRoles = this.getAttribute("user-roles") ?? [];
-    const isFinanceUser = [
-      "Finance Reporting",
-      "Corporate Finance",
-      "Finance Manager",
-      "System Admin",
-    ].some((r) => userRoles.includes(r));
-
     let navLinks = [
       {
         url: `${prefix}/supervision/#/clients/search-for-client`,
@@ -27,7 +19,6 @@ export class SiriusHeader extends HTMLElement {
       {
         url: `${prefix}/supervision/finance-admin/downloads`,
         title: "Finance",
-        hide: !isFinanceUser,
       },
     ];
 

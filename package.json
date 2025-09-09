@@ -13,7 +13,7 @@
     "@cypress/request": "^3.0.9",
     "@ministryofjustice/frontend": "^1.0.0",
     "axe-core": "^4.7.2",
-    "cypress": "^13.17.0",
+    "cypress": "^15.0.0",
     "cypress-axe": "1.6.0",
     "esbuild": "0.25.8",
     "govuk-frontend": "^4.3.1",

@@ -169,13 +169,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.25.8.tgz#610d7ea539d2fcdbe39237b5cc175eb2c4451f9c"
   integrity sha512-cn3Yr7+OaaZq1c+2pe+8yxC8E144SReCQjN6/2ynubzYjvyqZjTXfQJpAcQpsdJq3My7XADANiYGHoFC69pLQw==
 
-"@ministryofjustice/frontend@^1.0.0":
-  version "1.8.0"
-  resolved "https://registry.npmjs.org/@ministryofjustice/frontend/-/frontend-1.8.0.tgz"
-  integrity sha512-N4791HcFoqJNLNrK6EN4oMaTJjeFp9ileavCpXkda3qvpEWQByxZUsOd6sDA69FuLRpB6jBFL2C2bqfYbcTdqg==
-  dependencies:
-    govuk-frontend "^3.0.0 || ^4.0.0"
-    moment "^2.27.0"
+"@ministryofjustice/frontend@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@ministryofjustice/frontend/-/frontend-6.0.0.tgz#bcfc015981472a4f081ce41ef8bb3383a47bfbf1"
+  integrity sha512-EzIckqyaY/JZIHOGLAqF+slCEAVB7HI0RSuYkQ9KCQlRfuiXztfRt/KcsSc/Ax7tGpC80g7w/mH16eLXIkPAag==
 
 "@types/node@*":
   version "20.3.2"
@@ -885,7 +882,7 @@ gopd@^1.2.0:
   resolved "https://registry.yarnpkg.com/gopd/-/gopd-1.2.0.tgz#89f56b8217bdbc8802bd299df6d7f1081d7e51a1"
   integrity sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==
 
-"govuk-frontend@^3.0.0 || ^4.0.0", govuk-frontend@^4.3.1:
+govuk-frontend@^4.3.1:
   version "4.6.0"
   resolved "https://registry.npmjs.org/govuk-frontend/-/govuk-frontend-4.6.0.tgz"
   integrity sha512-pLJVHVvfsTmNDBH/YBCMyuqSMCQmOrNQXoThdcAzhXJVbuaWnGc1URvjOR7EJeZyOm101fHDjzTkTvpEy6zfiw==
@@ -1208,11 +1205,6 @@ mkdirp@^0.5.6:
   integrity sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==
   dependencies:
     minimist "^1.2.6"
-
-moment@^2.27.0:
-  version "2.29.4"
-  resolved "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
-  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 ms@2.1.2:
   version "2.1.2"

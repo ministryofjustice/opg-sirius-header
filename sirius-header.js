@@ -20,6 +20,10 @@ export class SiriusHeader extends HTMLElement {
         url: `${prefix}/supervision/finance-admin/downloads`,
         title: "Finance",
       },
+      {
+          url: `${prefix}/supervision/management-information`,
+          title: "Management information",
+      },
     ];
 
     // Override the nav links if <sirius-header-nav> elements are defined

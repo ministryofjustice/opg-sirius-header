@@ -23,6 +23,7 @@ export class SiriusHeader extends HTMLElement {
       {
           url: `${prefix}/supervision/management-information`,
           title: "Management information",
+          hide: true,
       },
     ];
 

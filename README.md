@@ -1,5 +1,5 @@
 # opg-sirius-header
-
+trigger workflow
 This is a small template repo imported into other Go repos. <br>
 There is custom CSS within the sirius-header.scss that will get pulled through into these other repos. <br>
 

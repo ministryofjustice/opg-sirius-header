@@ -44,7 +44,7 @@ if this is taken and the app hosts on another port Cypress will fail)
 Add dependency to package.json in repo you want to import it into `"opg-sirius-header": "ministryofjustice/opg-sirius-header"` <br>
 Import the SCSS from sirius-header into the repo's main.scss file `@import "node_modules/opg-sirius-header/sass/sirius-header"` <br>
 Import module into repo's main.js file `import "opg-sirius-header/sirius-header.js"` <br>
-Run `Yarn install` and build the CSS locally
+Run `yarn install --frozen-lockfile --ignore-scripts` and build the CSS locally
 
 To incorporate the header into a page, use this HTML:
 

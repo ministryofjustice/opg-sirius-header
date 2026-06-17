@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY sass sass
 COPY package.json package.json
+COPY yarn.lock yarn.lock
 COPY public public
 # COPY sirius-header.js public/js/sirius-header.js
 

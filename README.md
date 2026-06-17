@@ -33,8 +33,8 @@ Alternatively, you can use Docker: `docker compose up opg-sirius-header`
 
 Due to the requirements for testing conditional rendering, the header needs to be served via Docker in order to use the `public/` directory structure:
 
-- Run `docker compose up opg-sirius-header`
-- Run `yarn cypress` in another console window
+- Run `docker compose up opg-sirius-header` to run alone
+- Run `docker compose run cypress` to test
 
 (NB: Cypress expects the app to be running on 8080 which is the default port,
 if this is taken and the app hosts on another port Cypress will fail)

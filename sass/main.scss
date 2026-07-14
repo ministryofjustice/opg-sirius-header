@@ -1,3 +1,2 @@
-@use "node_modules/@ministryofjustice/frontend/moj/all";
-@use "node_modules/govuk-frontend/dist/govuk";
+@forward "node_modules/@ministryofjustice/frontend/moj/all";
 @forward "sass/sirius-header";

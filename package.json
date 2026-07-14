@@ -15,7 +15,6 @@
     "axe-core": "^4.7.2",
     "cypress": "15.18.0",
     "cypress-axe": "1.7.0",
-    "cypress-failed-log": "2.9.2",
     "esbuild": "0.28.1",
     "govuk-frontend": "^6.3.0",
     "http-server": "v14.1.1",

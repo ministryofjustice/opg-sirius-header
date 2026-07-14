@@ -11,12 +11,12 @@
   },
   "devDependencies": {
     "@cypress/request": "^4.0.0",
-    "@ministryofjustice/frontend": "^6.0.0",
+    "@ministryofjustice/frontend": "^9.0.0",
     "axe-core": "^4.7.2",
     "cypress": "15.18.0",
     "cypress-axe": "1.7.0",
     "esbuild": "0.28.1",
-    "govuk-frontend": "^5.0.0",
+    "govuk-frontend": "^6.3.0",
     "http-server": "v14.1.1",
     "sass": "^1.63.6",
     "cypress-failed-log": "2.10.0"

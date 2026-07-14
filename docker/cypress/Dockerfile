@@ -10,6 +10,7 @@ COPY cypress.config.js .
 COPY cypress cypress
 COPY package.json package.json
 COPY yarn.lock yarn.lock
+
 RUN yarn install --frozen-lockfile --ignore-scripts
 
 ENTRYPOINT ["yarn", "cypress-headless"]

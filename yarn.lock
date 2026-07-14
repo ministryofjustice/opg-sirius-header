@@ -163,10 +163,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.28.1.tgz#10064ee44f4347b90c9a02b446bbf80a91632b12"
   integrity sha512-bm4Mowrv+GXMlpWX++EcXw/iLyd1o3+bJkC2DkWXYVvgZCqD/bSj9ctZeAMC3cIxgjRVR2Dufaiu4YPxr5gW1A==
 
-"@ministryofjustice/frontend@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@ministryofjustice/frontend/-/frontend-6.0.0.tgz#bcfc015981472a4f081ce41ef8bb3383a47bfbf1"
-  integrity sha512-EzIckqyaY/JZIHOGLAqF+slCEAVB7HI0RSuYkQ9KCQlRfuiXztfRt/KcsSc/Ax7tGpC80g7w/mH16eLXIkPAag==
+"@ministryofjustice/frontend@^9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@ministryofjustice/frontend/-/frontend-9.0.0.tgz#c106740ccc681744f2a62616101b9dd2ff57202a"
+  integrity sha512-R63EvHq//lONAhpUfZCMfxlUHoysDx5Hc6mi9EEV+sfVGm2spGV52PJAkYCYAc3bhTaTiJDtEM+PXgJm0iTWvQ==
 
 "@parcel/watcher-android-arm64@2.5.6":
   version "2.5.6"
@@ -888,7 +888,7 @@ gopd@^1.2.0:
   resolved "https://registry.yarnpkg.com/gopd/-/gopd-1.2.0.tgz#89f56b8217bdbc8802bd299df6d7f1081d7e51a1"
   integrity sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==
 
-govuk-frontend@^6.0.0:
+govuk-frontend@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/govuk-frontend/-/govuk-frontend-6.3.0.tgz#1ff97c181ab08ec0b96fdb96628066a5d32e1018"
   integrity sha512-cXIQxm5PHCsbic47GXZrVBZhAeeshTLRL6ZBKilLsR6rMCjJuWb7Fruq0VUNMBJFlJk/srsRj/q8d5bM9cgKoA==

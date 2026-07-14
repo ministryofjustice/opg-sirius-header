@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "govuk-frontend": "^6.3.0",
-    "@cypress/request": "^3.0.9",
+    "@cypress/request": "^4.0.0",
     "@ministryofjustice/frontend": "^9.0.0",
     "axe-core": "^4.7.2",
     "cypress": "^15.0.0",

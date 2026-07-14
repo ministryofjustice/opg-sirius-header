@@ -19,6 +19,6 @@
     "govuk-frontend": "^5.0.0",
     "http-server": "v14.1.1",
     "sass": "^1.63.6",
-    "cypress-failed-log": "2.9.2"
+    "cypress-failed-log": "2.10.0"
   }
 }

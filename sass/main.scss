@@ -1,5 +1,5 @@
-@use "node_modules/govuk-frontend/dist/govuk/all" as *;
 @use "node_modules/@ministryofjustice/frontend/moj/all";
+@use "node_modules/govuk-frontend/dist/govuk/index" as *;
 
 .sirius-header {
   .govuk-header__link {

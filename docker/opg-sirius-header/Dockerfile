@@ -10,6 +10,4 @@ COPY public public
 
 RUN yarn install --frozen-lockfile --ignore-scripts
 RUN yarn compile-sass
-RUN yarn build:images
-RUN yarn build:fonts
 ENTRYPOINT ["yarn", "serve"]

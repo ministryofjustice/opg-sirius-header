@@ -6,8 +6,6 @@
     "serve": "http-server",
     "serve-local": "http-server .",
     "compile-sass": "sass --load-path . --style compressed sass/main.scss public/css/all.css",
-    "build:images": "mkdir -p web/static/assets/images && cp public/assets/images/* web/static/assets/images",
-    "build:fonts": "mkdir -p web/static/assets/fonts && cp public/assets/fonts/* web/static/assets/fonts",
     "cypress": "cypress open",
     "cypress-headless": "cypress run --headless"
   },

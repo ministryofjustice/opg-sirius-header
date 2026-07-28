@@ -13,7 +13,28 @@
     display: none;
   }
 
+  @media (min-width: 769px) {
+    .sirius-header .govuk-header__container .govuk-header__service-name {
+      justify-self: center;
+    }
+  }
+  .govuk-header__service-name {
+    font-weight: 700;
+  }
+  @media (min-width: 40.0625em) {
+    .govuk-header__service-name {
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+  }
+  .govuk-header__service-name {
+    display: inline-block;
+    margin-bottom: 10px;
+    line-height: 1.1111111111;
+  }
+
   .govuk-header {
+    background: #0b0c0c;
     max-width: none !important;
     padding: 0 govuk-spacing(3);
   }
@@ -34,6 +55,19 @@
 
   .app-\!-embedded .app-\!-embedded-hide {
     display: none;
+  }
+
+  // When embedded, always use mobile-size wrapper spacing
+  @include govuk-media-query($from: tablet) {
+    .app-\!-embedded .govuk-width-container {
+      margin-left: $govuk-gutter-half;
+      margin-right: $govuk-gutter-half;
+    }
+
+    .app-\!-embedded .govuk-main-wrapper {
+      padding-top: govuk-spacing(4);
+      padding-bottom: govuk-spacing(4);
+    }
   }
 
   /* centre title in header and right-align menu */
@@ -60,15 +94,32 @@
       }
     }
   }
+}
 
-  #feedback-span {
-    padding-left: 35px !important;
-  }
+.govuk-header__logo {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
+#feedback-span {
+  padding-left: 35px !important;
 }
 
 .govuk-header__link:link,.govuk-header__link:visited {
   color: #fff
+}
+
+.govuk-header__container {
+  position: relative;
+  margin-bottom: -10px;
+  padding-top: 10px;
+  border-bottom: 10px solid #1d70b8;
+}
+
+.govuk-phase-banner {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b1b4b6;
 }
 
 .govuk-header__link:hover,.govuk-header__link:active {
@@ -115,13 +166,6 @@
 .govuk-header__link--homepage:focus {
   margin-bottom: 0;
   border-bottom: 0
-}
-
-.govuk-header__service-name {
-  display: inline-block;
-  margin-bottom: 10px;
-  font-size: 1.125rem;
-  line-height: 1.1111111111
 }
 
 .govuk-header__navigation-item a {

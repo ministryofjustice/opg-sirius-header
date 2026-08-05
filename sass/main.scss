@@ -33,7 +33,7 @@
   }
 
   .govuk-header {
-    background: #0b0c0c;
+    background: govuk-colour("black");
     max-width: none !important;
     padding: 0 govuk-spacing(3);
   }
@@ -105,20 +105,20 @@
 }
 
 .govuk-header__link:link,.govuk-header__link:visited {
-  color: #fff
+  color: govuk-colour("white");
 }
 
 .govuk-header__container {
   position: relative;
   margin-bottom: -10px;
   padding-top: 10px;
-  border-bottom: 10px solid #1d70b8;
+  border-bottom: 10px solid govuk-functional-colour("brand");
 }
 
 .govuk-phase-banner {
   padding-top: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #b1b4b6;
+  border-bottom: 1px solid govuk-colour("white");
 }
 
 .govuk-header__link:hover,.govuk-header__link:active {
@@ -126,7 +126,7 @@
 }
 
 .govuk-header__link:focus {
-  color: #0b0c0c
+  color: govuk-functional-colour("text")
 }
 
 .govuk-header__link {
@@ -141,9 +141,9 @@
 
 .govuk-header__link:focus {
   outline: 3px solid rgba(0,0,0,0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+  color: govuk-colour("black");
+  background-color: govuk-functional-colour("focus");
+  box-shadow: 0 -2px govuk-functional-colour("focus"),0 4px govuk-colour("black");
   text-decoration: none
 }
 
@@ -174,7 +174,7 @@
 
 .govuk-header__navigation-item {
   padding: 10px 0;
-  border-bottom: 1px solid #2e3133
+  border-bottom: 1px solid govuk-functional-colour("border")
 }
 
 @media(min-width: 48.0625em) {

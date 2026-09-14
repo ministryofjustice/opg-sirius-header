@@ -163,10 +163,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.28.1.tgz#10064ee44f4347b90c9a02b446bbf80a91632b12"
   integrity sha512-bm4Mowrv+GXMlpWX++EcXw/iLyd1o3+bJkC2DkWXYVvgZCqD/bSj9ctZeAMC3cIxgjRVR2Dufaiu4YPxr5gW1A==
 
-"@ministryofjustice/frontend@^9.0.0":
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/@ministryofjustice/frontend/-/frontend-9.0.0.tgz#c106740ccc681744f2a62616101b9dd2ff57202a"
-  integrity sha512-R63EvHq//lONAhpUfZCMfxlUHoysDx5Hc6mi9EEV+sfVGm2spGV52PJAkYCYAc3bhTaTiJDtEM+PXgJm0iTWvQ==
+"@ministryofjustice/frontend@^11.0.0":
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/@ministryofjustice/frontend/-/frontend-11.0.1.tgz#a04e50a9c5c021de7f71e2b07f9deab4d643143e"
+  integrity sha512-cK7ixMbKBL6DepQEUcMNszsKFipSyBIG7uxBeSBN9MMR/519DM73EjdE2xEDsZf1OTBEgMAPmS06uKqZej7VMw==
 
 "@parcel/watcher-android-arm64@2.5.6":
   version "2.5.6"

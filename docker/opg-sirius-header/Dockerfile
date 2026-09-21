@@ -3,11 +3,11 @@ FROM node:lts-alpine3.24@sha256:21f403ab171f2dc89bad4dd69d7721bfd15f084ccb46cdd2
 WORKDIR /app
 
 COPY sass sass
-COPY package.json package.json
-COPY yarn.lock yarn.lock
+COPY package.json .
+COPY package-lock.json .
 COPY public public
 # COPY sirius-header.js public/js/sirius-header.js
 
-RUN yarn install --frozen-lockfile --ignore-scripts
-RUN yarn compile-sass
-ENTRYPOINT ["yarn", "serve"]
+RUN npm ci --ignore-scripts
+RUN npm run compile-sass
+ENTRYPOINT ["npm", "run", "serve"]

@@ -8,9 +8,9 @@ ENV CYPRESS_baseUrl=http://opg-sirius-header:8080
 
 COPY cypress.config.js .
 COPY cypress cypress
-COPY package.json package.json
-COPY yarn.lock yarn.lock
+COPY package.json .
+COPY package-lock.json .
 
-RUN yarn install --frozen-lockfile --ignore-scripts
+RUN npm ci --ignore-scripts
 
-ENTRYPOINT ["yarn", "cypress-headless"]
+ENTRYPOINT ["npm", "run", "cypress-headless"]
